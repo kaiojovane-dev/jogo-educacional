@@ -72,7 +72,7 @@
         subtitle: 'Resolva os desafios e acenda as estrelas!',
         instruction: 'Resolva cada desafio do livro mágico para acender uma estrela!',
         intro: 'Abra o livro mágico! Resolva os desafios para acender todas as estrelas da missão.',
-        heroImage: 'assets/extracted/illust_jogo5.png',
+        heroImage: 'assets/images/jogos/illust_jogo5.png',
         heroAlt: 'Missão Palavra Mágica',
         resultTitle: 'Missão cumprida!',
         activities: ACTIVITIES

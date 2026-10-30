@@ -6,18 +6,30 @@
   <meta name="description" content="Patati Patatá — Vamos Aprender Brincando! Plataforma educacional infantil com cinco jogos de leitura e escrita, com áudio em português.">
   <title>Patati Patatá — Vamos Aprender Brincando!</title>
   
-  <!-- Estilos Oficiais do Sistema Visual -->
-  <link rel="stylesheet" href="style.css?v=20261030h">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 
-  <!-- Fundos das telas (carregados antes para a troca ser instantânea) -->
-  <link rel="preload" as="image" href="assets/images/fundos/jogos.jpg">
-  <link rel="preload" as="image" href="assets/images/fundos/conquistas.jpg">
-  <link rel="preload" as="image" href="assets/images/fundos/sobre.jpg">
-  <link rel="preload" as="image" href="assets/images/fundos/detetives.jpg">
-  <link rel="preload" as="image" href="assets/images/fundos/mebolo.jpg">
-  <link rel="preload" as="image" href="assets/images/fundos/construtores.jpg">
-  <link rel="preload" as="image" href="assets/images/fundos/aventura.jpg">
-  <link rel="preload" as="image" href="assets/images/fundos/missao.jpg">
+  <!-- Fontes (conexão aberta cedo para não atrasar o texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Titan+One&family=Fredoka:wght@400;500;600;700;800;900&family=Nunito:wght@600;700;800;900&display=swap">
+
+  <!-- Estilos Oficiais do Sistema Visual (mesma ordem da cascata anterior;
+       <link> em paralelo em vez de @import em sequência) -->
+  <link rel="stylesheet" href="css/variables.css?v=20261030j">
+  <link rel="stylesheet" href="css/base.css?v=20261030j">
+  <link rel="stylesheet" href="css/components.css?v=20261030j">
+  <link rel="stylesheet" href="css/games.css?v=20261030j">
+  <link rel="stylesheet" href="css/animations.css?v=20261030j">
+  <link rel="stylesheet" href="css/platform.css?v=20261030j">
+  <link rel="stylesheet" href="css/game-shell.css?v=20261030j">
+  <link rel="stylesheet" href="css/game-mebolo.css?v=20261030j">
+  <link rel="stylesheet" href="css/game-construtores.css?v=20261030j">
+  <link rel="stylesheet" href="css/game-aventura.css?v=20261030j">
+  <link rel="stylesheet" href="css/game-missao.css?v=20261030j">
+  <link rel="stylesheet" href="css/pages.css?v=20261030j">
+  <link rel="stylesheet" href="css/home.css?v=20261030j">
+
+  <!-- Os fundos das outras telas são baixados em segundo plano por js/core/assets.js -->
 </head>
 <body data-page="inicio">
 
@@ -148,7 +160,7 @@
           loop 
           playsinline 
         >
-          <source src="video1.mp4" type="video/mp4">
+          <source src="assets/video/abertura.mp4" type="video/mp4">
           Seu navegador não suporta vídeo HTML5.
         </video>
 
@@ -180,7 +192,7 @@
           <!-- Card 1: Detetives dos Sons (Ciano) -->
           <article class="pp-game-card pp-game-card--cyan" data-game-target="1" id="card-game-1">
             <div class="pp-game-card__illustration">
-              <img src="assets/extracted/illust_jogo1.png" alt="Detetives dos Sons">
+              <picture><source srcset="assets/images/jogos/illust_jogo1.webp" type="image/webp"><img src="assets/images/jogos/illust_jogo1.png" alt="Detetives dos Sons" loading="lazy" decoding="async"></picture>
             </div>
             <div class="pp-game-card__badge">Detetives dos Sons</div>
             <div class="pp-game-card__info">
@@ -199,7 +211,7 @@
           <!-- Card 2: O Gato Mebolo (Verde) -->
           <article class="pp-game-card pp-game-card--green" data-game-target="2" id="card-game-2">
             <div class="pp-game-card__illustration">
-              <img src="assets/extracted/illust_jogo2.png" alt="O Gato Mebolo">
+              <picture><source srcset="assets/images/jogos/illust_jogo2.webp" type="image/webp"><img src="assets/images/jogos/illust_jogo2.png" alt="O Gato Mebolo" loading="lazy" decoding="async"></picture>
             </div>
             <div class="pp-game-card__badge">O Gato Mebolo</div>
             <div class="pp-game-card__info">
@@ -218,7 +230,7 @@
           <!-- Card 3: Construtores de Palavras (Amarelo / Laranja) -->
           <article class="pp-game-card pp-game-card--yellow" data-game-target="3" id="card-game-3">
             <div class="pp-game-card__illustration">
-              <img src="assets/extracted/illust_jogo3.png" alt="Construtores de Palavras">
+              <picture><source srcset="assets/images/jogos/illust_jogo3.webp" type="image/webp"><img src="assets/images/jogos/illust_jogo3.png" alt="Construtores de Palavras" loading="lazy" decoding="async"></picture>
             </div>
             <div class="pp-game-card__badge">Construtores de Palavras</div>
             <div class="pp-game-card__info">
@@ -237,7 +249,7 @@
           <!-- Card 4: Aventura do Re G (Roxo) -->
           <article class="pp-game-card pp-game-card--purple" data-game-target="4" id="card-game-4">
             <div class="pp-game-card__illustration">
-              <img src="assets/extracted/illust_jogo4.png" alt="Aventura do Re G">
+              <picture><source srcset="assets/images/jogos/illust_jogo4.webp" type="image/webp"><img src="assets/images/jogos/illust_jogo4.png" alt="Aventura do Re G" loading="lazy" decoding="async"></picture>
             </div>
             <div class="pp-game-card__badge">Aventura do Re G</div>
             <div class="pp-game-card__info">
@@ -256,7 +268,7 @@
           <!-- Card 5: Missão Palavra Mágica (Rosa) -->
           <article class="pp-game-card pp-game-card--pink" data-game-target="5" id="card-game-5">
             <div class="pp-game-card__illustration">
-              <img src="assets/extracted/illust_jogo5.png" alt="Missão Palavra Mágica">
+              <picture><source srcset="assets/images/jogos/illust_jogo5.webp" type="image/webp"><img src="assets/images/jogos/illust_jogo5.png" alt="Missão Palavra Mágica" loading="lazy" decoding="async"></picture>
             </div>
             <div class="pp-game-card__badge">Missão Palavra Mágica</div>
             <div class="pp-game-card__info">
@@ -353,7 +365,7 @@
           <div id="detetives-game-result" class="pp-detetive-result-card" style="display: none;">
             <div id="detetives-confetti-container" class="pp-modal__confetti-box"></div>
             <div class="pp-character-badge" style="width: 90px; height: 90px; margin: -50px auto 0.5rem; border: 4px solid #ffea55; background: #fff;">
-              <img src="assets/extracted/patati_avatar_helper.png" alt="Patati Detetive">
+              <picture><source srcset="assets/images/personagens/patati_avatar_helper.webp" type="image/webp"><img src="assets/images/personagens/patati_avatar_helper.png" alt="Patati Detetive" loading="lazy" decoding="async"></picture>
             </div>
             <h2 class="pp-font-bubbly" style="color: #0f3d79; font-size: 2.2rem; margin-bottom: 0.25rem;">
               🎉 Missão Cumprida, Detetive!
@@ -390,7 +402,7 @@
 
 
       <!-- ====================================================================
-           4. JOGOS 2 A 5 (moldura e atividades montadas por js/gameBase.js)
+           4. JOGOS 2 A 5 (moldura e atividades montadas por js/core/gameBase.js)
            ==================================================================== -->
       <section class="pp-view pp-game-view" id="view-game-mebolo" style="display: none;" aria-label="Jogo O Gato Mebolo"></section>
       <section class="pp-view pp-game-view" id="view-game-construtores" style="display: none;" aria-label="Jogo Construtores de Palavras"></section>
@@ -477,8 +489,8 @@
               <button class="pp-btn pp-btn--yellow-cta" type="button" data-view="jogos">Conhecer os jogos</button>
             </div>
             <div class="pp-about-hero__art" aria-hidden="true">
-              <img src="assets/extracted/patati_home.png" alt="">
-              <img src="assets/extracted/patata_home.png" alt="">
+              <picture><source srcset="assets/images/personagens/patati_home.webp" type="image/webp"><img src="assets/images/personagens/patati_home.png" alt="" loading="lazy" decoding="async"></picture>
+              <picture><source srcset="assets/images/personagens/patata_home.webp" type="image/webp"><img src="assets/images/personagens/patata_home.png" alt="" loading="lazy" decoding="async"></picture>
             </div>
           </header>
 
@@ -512,17 +524,17 @@
             <h2 class="pp-section-title" id="sobre-personagens">Os personagens</h2>
             <div class="pp-about-characters">
               <article class="pp-about-character pp-about-character--blue">
-                <div class="pp-about-character__art"><img src="assets/extracted/patati_home.png" alt="Patati"></div>
+                <div class="pp-about-character__art"><picture><source srcset="assets/images/personagens/patati_home.webp" type="image/webp"><img src="assets/images/personagens/patati_home.png" alt="Patati" loading="lazy" decoding="async"></picture></div>
                 <h3>Patati</h3>
                 <p>Curioso e animado, vira detetive, ajudante da oficina e explorador para acompanhar a criança nos desafios.</p>
               </article>
               <article class="pp-about-character pp-about-character--green">
-                <div class="pp-about-character__art"><img src="assets/extracted/patata_home.png" alt="Patatá"></div>
+                <div class="pp-about-character__art"><picture><source srcset="assets/images/personagens/patata_home.webp" type="image/webp"><img src="assets/images/personagens/patata_home.png" alt="Patatá" loading="lazy" decoding="async"></picture></div>
                 <h3>Patatá</h3>
                 <p>Alegre e brincalhão, é o parceiro inseparável do Patati e recebe a criança na praça da diversão.</p>
               </article>
               <article class="pp-about-character pp-about-character--orange">
-                <div class="pp-about-character__art pp-about-character__art--contain"><img src="assets/images/mebolo/mebolo.svg" alt="Gato Mebolo"></div>
+                <div class="pp-about-character__art pp-about-character__art--contain"><img src="assets/images/personagens/mebolo.svg" alt="Gato Mebolo"></div>
                 <h3>Gato Mebolo</h3>
                 <p>Um gatinho divertido que às vezes gruda as palavras e precisa de ajuda para separá-las e organizá-las.</p>
               </article>
@@ -533,7 +545,7 @@
             <h2 class="pp-section-title" id="sobre-jogos">Os cinco jogos</h2>
             <div class="pp-about-games">
               <article class="pp-about-game" style="--cq-color: #25A9E8;">
-                <img src="assets/extracted/illust_jogo1.png" alt="">
+                <picture><source srcset="assets/images/jogos/illust_jogo1.webp" type="image/webp"><img src="assets/images/jogos/illust_jogo1.png" alt="" loading="lazy" decoding="async"></picture>
                 <div>
                   <h3>Detetives dos Sons</h3>
                   <p>Ouça a palavra, observe a figura e descubra qual escrita está correta.</p>
@@ -542,7 +554,7 @@
                 <button class="pp-btn pp-btn--blue" type="button" data-open-game="detetives">Jogar</button>
               </article>
               <article class="pp-about-game" style="--cq-color: #54C96B;">
-                <img src="assets/extracted/illust_jogo2.png" alt="">
+                <picture><source srcset="assets/images/jogos/illust_jogo2.webp" type="image/webp"><img src="assets/images/jogos/illust_jogo2.png" alt="" loading="lazy" decoding="async"></picture>
                 <div>
                   <h3>O Gato Mebolo</h3>
                   <p>Organize frases, separe palavras grudadas e encontre os erros do Mebolo.</p>
@@ -551,7 +563,7 @@
                 <button class="pp-btn pp-btn--blue" type="button" data-open-game="mebolo">Jogar</button>
               </article>
               <article class="pp-about-game" style="--cq-color: #FF9838;">
-                <img src="assets/extracted/illust_jogo3.png" alt="">
+                <picture><source srcset="assets/images/jogos/illust_jogo3.webp" type="image/webp"><img src="assets/images/jogos/illust_jogo3.png" alt="" loading="lazy" decoding="async"></picture>
                 <div>
                   <h3>Construtores de Palavras</h3>
                   <p>Veja a figura, ouça o nome e monte a palavra com os blocos de letras.</p>
@@ -560,7 +572,7 @@
                 <button class="pp-btn pp-btn--blue" type="button" data-open-game="construtores">Jogar</button>
               </article>
               <article class="pp-about-game" style="--cq-color: #9364E8;">
-                <img src="assets/extracted/illust_jogo4.png" alt="">
+                <picture><source srcset="assets/images/jogos/illust_jogo4.webp" type="image/webp"><img src="assets/images/jogos/illust_jogo4.png" alt="" loading="lazy" decoding="async"></picture>
                 <div>
                   <h3>Aventura do Re G</h3>
                   <p>Siga a trilha da floresta completando as placas com R ou RR, G ou GU, C ou QU.</p>
@@ -569,7 +581,7 @@
                 <button class="pp-btn pp-btn--blue" type="button" data-open-game="aventura">Jogar</button>
               </article>
               <article class="pp-about-game" style="--cq-color: #F05B9B;">
-                <img src="assets/extracted/illust_jogo5.png" alt="">
+                <picture><source srcset="assets/images/jogos/illust_jogo5.webp" type="image/webp"><img src="assets/images/jogos/illust_jogo5.png" alt="" loading="lazy" decoding="async"></picture>
                 <div>
                   <h3>Missão Palavra Mágica</h3>
                   <p>Abra o livro mágico e use tudo o que aprendeu para acender as estrelas.</p>
@@ -602,16 +614,17 @@
   </div>
 
   <!-- Scripts JavaScript Puro (ordem: núcleo → jogos → páginas → navegação) -->
-  <script src="js/progress.js?v=20261030h"></script>
-  <script src="js/audio.js?v=20261030h"></script>
-  <script src="js/components.js?v=20261030h"></script>
-  <script src="js/gameBase.js?v=20261030h"></script>
-  <script src="js/games/detetivesSons.js?v=20261030h"></script>
-  <script src="js/games/gatoMebolo.js?v=20261030h"></script>
-  <script src="js/games/construtoresPalavras.js?v=20261030h"></script>
-  <script src="js/games/aventuraReG.js?v=20261030h"></script>
-  <script src="js/games/missaoPalavraMagica.js?v=20261030h"></script>
-  <script src="js/pages/conquistas.js?v=20261030h"></script>
-  <script src="js/app.js?v=20261030h"></script>
+  <script src="js/core/assets.js?v=20261030j"></script>
+  <script src="js/core/progress.js?v=20261030j"></script>
+  <script src="js/core/audio.js?v=20261030j"></script>
+  <script src="js/core/components.js?v=20261030j"></script>
+  <script src="js/core/gameBase.js?v=20261030j"></script>
+  <script src="js/games/detetivesSons.js?v=20261030j"></script>
+  <script src="js/games/gatoMebolo.js?v=20261030j"></script>
+  <script src="js/games/construtoresPalavras.js?v=20261030j"></script>
+  <script src="js/games/aventuraReG.js?v=20261030j"></script>
+  <script src="js/games/missaoPalavraMagica.js?v=20261030j"></script>
+  <script src="js/pages/conquistas.js?v=20261030j"></script>
+  <script src="js/app.js?v=20261030j"></script>
 </body>
 </html>

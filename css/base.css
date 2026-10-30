@@ -4,7 +4,7 @@
    Reset, Tipografia e Cenário Infantil Vivo (Céu, Nuvens, Sol, Arco-íris, Colinas)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Titan+One&family=Fredoka:wght@400;500;600;700;800;900&family=Nunito:wght@600;700;800;900&display=swap');
+/* Fontes do Google carregadas por <link> no index.html */
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -54,16 +54,17 @@ body {
   z-index: var(--pp-z-scenery);
   overflow: hidden;
   background: #8fd8fb url('../assets/images/fundos/jogos.jpg') center bottom / cover no-repeat;
+  background-image: image-set(url('../assets/images/fundos/jogos.webp') type('image/webp'), url('../assets/images/fundos/jogos.jpg') type('image/jpeg'));
 }
 
-body[data-page="jogos"] .pp-scenery { background-image: url('../assets/images/fundos/jogos.jpg'); background-color: #8fd8fb; }
-body[data-page="conquistas"] .pp-scenery { background-image: url('../assets/images/fundos/conquistas.jpg'); background-color: #ffe9b0; }
-body[data-page="sobre"] .pp-scenery { background-image: url('../assets/images/fundos/sobre.jpg'); background-color: #a6e0fc; }
-body[data-page="game-detetives"] .pp-scenery { background-image: url('../assets/images/fundos/detetives.jpg'); background-color: #9fdcfb; }
-body[data-page="game-mebolo"] .pp-scenery { background-image: url('../assets/images/fundos/mebolo.jpg'); background-color: #c8f3dc; }
-body[data-page="game-construtores"] .pp-scenery { background-image: url('../assets/images/fundos/construtores.jpg'); background-color: #ffe1b8; }
-body[data-page="game-aventura"] .pp-scenery { background-image: url('../assets/images/fundos/aventura.jpg'); background-color: #bfe9fb; }
-body[data-page="game-missao"] .pp-scenery { background-image: url('../assets/images/fundos/missao.jpg'); background-color: #8a5ad8; }
+body[data-page="jogos"] .pp-scenery { background-image: url('../assets/images/fundos/jogos.jpg'); background-image: image-set(url('../assets/images/fundos/jogos.webp') type('image/webp'), url('../assets/images/fundos/jogos.jpg') type('image/jpeg')); background-color: #8fd8fb; }
+body[data-page="conquistas"] .pp-scenery { background-image: url('../assets/images/fundos/conquistas.jpg'); background-image: image-set(url('../assets/images/fundos/conquistas.webp') type('image/webp'), url('../assets/images/fundos/conquistas.jpg') type('image/jpeg')); background-color: #ffe9b0; }
+body[data-page="sobre"] .pp-scenery { background-image: url('../assets/images/fundos/sobre.jpg'); background-image: image-set(url('../assets/images/fundos/sobre.webp') type('image/webp'), url('../assets/images/fundos/sobre.jpg') type('image/jpeg')); background-color: #a6e0fc; }
+body[data-page="game-detetives"] .pp-scenery { background-image: url('../assets/images/fundos/detetives.jpg'); background-image: image-set(url('../assets/images/fundos/detetives.webp') type('image/webp'), url('../assets/images/fundos/detetives.jpg') type('image/jpeg')); background-color: #9fdcfb; }
+body[data-page="game-mebolo"] .pp-scenery { background-image: url('../assets/images/fundos/mebolo.jpg'); background-image: image-set(url('../assets/images/fundos/mebolo.webp') type('image/webp'), url('../assets/images/fundos/mebolo.jpg') type('image/jpeg')); background-color: #c8f3dc; }
+body[data-page="game-construtores"] .pp-scenery { background-image: url('../assets/images/fundos/construtores.jpg'); background-image: image-set(url('../assets/images/fundos/construtores.webp') type('image/webp'), url('../assets/images/fundos/construtores.jpg') type('image/jpeg')); background-color: #ffe1b8; }
+body[data-page="game-aventura"] .pp-scenery { background-image: url('../assets/images/fundos/aventura.jpg'); background-image: image-set(url('../assets/images/fundos/aventura.webp') type('image/webp'), url('../assets/images/fundos/aventura.jpg') type('image/jpeg')); background-color: #bfe9fb; }
+body[data-page="game-missao"] .pp-scenery { background-image: url('../assets/images/fundos/missao.jpg'); background-image: image-set(url('../assets/images/fundos/missao.webp') type('image/webp'), url('../assets/images/fundos/missao.jpg') type('image/jpeg')); background-color: #8a5ad8; }
 
 /* --------------------------------------------------------------------------
    ESTRUTURA GERAL DA APLICAÇÃO (Single Page Layout)
@@ -86,6 +87,11 @@ body[data-page="game-missao"] .pp-scenery { background-image: url('../assets/ima
   margin: 0 auto;
   padding: 1rem 1.5rem 3rem;
 }
+
+/* <picture> só escolhe o formato (WebP ou original): a <img> interna
+   mantém o layout como se fosse filha direta do elemento pai */
+picture { display: contents; }
+picture > source { display: none; }
 
 /* Utilitários tipográficos */
 .pp-text-center { text-align: center; }

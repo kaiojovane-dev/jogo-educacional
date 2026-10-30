@@ -318,8 +318,8 @@
   aspect-ratio: 260 / 380;
 }
 
-.pp-about-hero__art img:first-child { transform: rotate(-3deg); }
-.pp-about-hero__art img:last-child { transform: rotate(3deg) translateY(-0.625rem); }
+.pp-about-hero__art > :first-child img { transform: rotate(-3deg); }
+.pp-about-hero__art > :last-child img { transform: rotate(3deg) translateY(-0.625rem); }
 
 .pp-about-lead {
   font-size: 1.1rem;
