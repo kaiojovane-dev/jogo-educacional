@@ -80,7 +80,7 @@
         subtitle: 'Siga a trilha e complete as placas!',
         instruction: 'Leia a frase, ouça a palavra e escolha as letras que completam a placa.',
         intro: 'Vamos explorar a floresta! Complete as placas para seguir pela trilha.',
-        heroImage: 'assets/extracted/illust_jogo4.png',
+        heroImage: 'assets/images/jogos/illust_jogo4.png',
         heroAlt: 'Aventura do Re G',
         resultTitle: 'Trilha completa!',
         activities: ACTIVITIES
@@ -107,7 +107,7 @@
         this.trail.appendChild(ppEl('span', c));
       });
       this.walker = ppEl('img', 'pp-ad-walker');
-      this.walker.src = 'assets/extracted/patati_avatar_helper.png';
+      this.walker.src = ppAsset('assets/images/personagens/patati_avatar_helper.png');
       this.walker.alt = '';
       path.appendChild(this.walker);
       this.stageEl.insertBefore(this.trail, this.stageEl.firstChild);

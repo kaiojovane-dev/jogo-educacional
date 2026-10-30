@@ -59,7 +59,7 @@
         subtitle: 'Separe e organize as palavras!',
         instruction: 'Ajude o Mebolo a separar e organizar as palavras!',
         intro: 'Oi! Eu sou o gato Mebolo! Vamos separar e organizar palavras juntos?',
-        heroImage: 'assets/extracted/illust_jogo2.png',
+        heroImage: 'assets/images/jogos/illust_jogo2.png',
         heroAlt: 'O Gato Mebolo',
         resultTitle: 'Miau! Você conseguiu!',
         activities: ACTIVITIES
@@ -87,7 +87,7 @@
       cat.setAttribute('aria-label', 'Mebolo: ouvir a frase');
       cat.setAttribute('data-pp-click', '');
       const catImg = ppEl('img');
-      catImg.src = 'assets/images/mebolo/mebolo.svg';
+      catImg.src = 'assets/images/personagens/mebolo.svg';
       catImg.alt = '';
       cat.appendChild(catImg);
       cat.addEventListener('click', () => {

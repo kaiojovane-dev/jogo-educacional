@@ -91,7 +91,7 @@
         const card = ppEl('article', 'pp-cq-game');
         card.style.setProperty('--cq-color', g.color);
         const img = ppEl('img', 'pp-cq-game__img');
-        img.src = g.image;
+        img.src = ppAsset(g.image);
         img.alt = '';
         const body = ppEl('div', 'pp-cq-game__body');
         body.appendChild(ppEl('h3', 'pp-cq-game__name', g.name));

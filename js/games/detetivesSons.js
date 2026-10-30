@@ -16,7 +16,7 @@ class DetetivesDosSonsGame {
         subtitle: 'Observe a figura e use a lupa para encontrar a escrita certa!',
         options: ['Vassora', 'Vaxoura', 'Vassouxa', 'Vassoura'],
         correct: 'Vassoura',
-        image: 'assets/extracted/vassoura.png'
+        image: 'assets/images/detetives/vassoura.png'
       },
       {
         id: 2,
@@ -115,10 +115,33 @@ class DetetivesDosSonsGame {
     this.correctCount = 0;    // Quantidade de acertos
     this.isAnswering = false;
     this.firstAttempt = true; // Se está na primeira tentativa da rodada
+
+    this.timers = [];        // Ações agendadas, canceladas ao sair do jogo
+  }
+
+  // Agenda ações que podem ser canceladas ao sair ou reiniciar o jogo
+  later(fn, ms) {
+    const id = setTimeout(() => {
+      this.timers = this.timers.filter((t) => t !== id);
+      fn();
+    }, ms);
+    this.timers.push(id);
+    return id;
+  }
+
+  clearTimers() {
+    this.timers.forEach(clearTimeout);
+    this.timers = [];
+  }
+
+  // Chamado pelo roteador ao sair da tela do jogo
+  pause() {
+    this.clearTimers();
   }
 
   // Inicializa o jogo e as 10 rodadas
   init() {
+    this.clearTimers();
     this.currentIndex = 0;
     this.score = 0;
     this.correctCount = 0;
@@ -175,7 +198,7 @@ class DetetivesDosSonsGame {
     if (figureEl) {
       figureEl.innerHTML = `
         <div class="pp-detetive-inspect-wrap">
-          <img src="${round.image}" alt="${round.word}" class="pp-detetive-inspect-img" />
+          <img src="${ppAsset(round.image)}" alt="${round.word}" class="pp-detetive-inspect-img" />
           <span class="pp-inspect-glass-badge" title="Lupa do Detetive">🔍</span>
         </div>
       `;
@@ -229,7 +252,7 @@ class DetetivesDosSonsGame {
     this.isAnswering = false;
 
     // Pronúncia da palavra após pequeno intervalo para o jogador associar com a imagem
-    setTimeout(() => {
+    this.later(() => {
       this.speakCurrentWord();
     }, 400);
   }
@@ -261,13 +284,13 @@ class DetetivesDosSonsGame {
       // Feedback sonoro e falado
       if (window.ppAudio) {
         window.ppAudio.playSuccess();
-        setTimeout(() => {
+        this.later(() => {
           window.ppAudio.speak(`Muito bem! A palavra é ${round.correct}!`);
         }, 150);
       }
 
       // Avança para a próxima atividade após a celebração
-      setTimeout(() => {
+      this.later(() => {
         this.currentIndex++;
         this.renderRound();
       }, 1500);
@@ -280,13 +303,13 @@ class DetetivesDosSonsGame {
 
       if (window.ppAudio) {
         window.ppAudio.playTryAgain();
-        setTimeout(() => {
+        this.later(() => {
           window.ppAudio.speak("Atenção, detetive! Tente mais uma vez!");
         }, 150);
       }
 
       // Permite nova tentativa rapidamente
-      setTimeout(() => {
+      this.later(() => {
         btn.classList.remove('is-wrong');
         this.isAnswering = false;
       }, 850);
@@ -349,7 +372,7 @@ class DetetivesDosSonsGame {
     // Fanfarra de vitória e fala
     if (window.ppAudio) {
       window.ppAudio.playVictory();
-      setTimeout(() => {
+      this.later(() => {
         window.ppAudio.speak(`Parabéns, detetive! Você fez ${this.score} pontos e conquistou ${starsEarned} estrelas!`);
       }, 400);
     }

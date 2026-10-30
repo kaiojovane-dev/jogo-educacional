@@ -39,7 +39,7 @@
         subtitle: 'Monte a palavra com os blocos!',
         instruction: 'Observe a figura, ouça a palavra e monte o nome com as letras da mesa.',
         intro: 'Bem-vindo à oficina! Observe a figura, ouça a palavra e monte o nome com os blocos de letras.',
-        heroImage: 'assets/extracted/illust_jogo3.png',
+        heroImage: 'assets/images/jogos/illust_jogo3.png',
         heroAlt: 'Construtores de Palavras',
         resultTitle: 'Obra concluída!',
         activities: ACTIVITIES
@@ -74,7 +74,7 @@
       figure.title = 'Ouvir a palavra';
       figure.setAttribute('aria-label', 'Figura: ouvir a palavra');
       const img = ppEl('img');
-      img.src = activity.image;
+      img.src = ppAsset(activity.image);
       img.alt = 'Figura da palavra';
       figure.appendChild(img);
       figure.addEventListener('click', () => this.speakWord());
@@ -87,7 +87,7 @@
       // Patati ajudante com balão de dica
       const helper = ppEl('div', 'pp-cw-helper');
       const patati = ppEl('img', 'pp-cw-helper__img');
-      patati.src = 'assets/extracted/patati_avatar_helper.png';
+      patati.src = ppAsset('assets/images/personagens/patati_avatar_helper.png');
       patati.alt = 'Patati, o ajudante da oficina';
       const tip = ppEl('p', 'pp-cw-helper__tip', `Esta palavra tem ${letters.length} letras. Vamos construir?`);
       helper.append(patati, tip);

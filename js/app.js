@@ -43,8 +43,9 @@
 
       // Pausa o jogo que estava aberto
       const leaving = this.current && this.current.startsWith('game-') ? this.current.slice(5) : null;
-      if (leaving && window.ppGames && window.ppGames[leaving] && leaving !== viewName.slice(5)) {
-        window.ppGames[leaving].pause();
+      const leavingGame = leaving === 'detetives' ? window.ppDetetivesGame : window.ppGames && window.ppGames[leaving];
+      if (leavingGame && leaving !== viewName.slice(5)) {
+        leavingGame.pause();
       }
 
       this.views.forEach((v) => {
