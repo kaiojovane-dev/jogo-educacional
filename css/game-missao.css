@@ -1,0 +1,285 @@
+/* ==========================================================================
+   PATATI PATATÁ — JOGO: MISSÃO PALAVRA MÁGICA
+   Arquivo: css/game-missao.css
+   Livro mágico aberto, constelação de estrelas e desafios integrados.
+   ========================================================================== */
+
+/* Constelação: uma estrela para cada desafio */
+.pp-mm-sky {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--pp-radius-pill);
+  background: linear-gradient(90deg, #4a2380 0%, #9364E8 50%, #F05B9B 100%);
+  box-shadow: inset 0 0.125rem 0.375rem rgba(0, 0, 0, 0.2), 0 0.375rem 0.875rem rgba(74, 35, 128, 0.25);
+}
+
+.pp-mm-sky__star {
+  font-size: 1.55rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.28);
+  transition: color 300ms ease, transform 300ms ease;
+}
+
+.pp-mm-sky__star.is-current { color: rgba(255, 255, 255, 0.7); transform: scale(1.15); }
+.pp-mm-sky__star.is-lit {
+  color: #FFD43B;
+  text-shadow: 0 0 0.625rem rgba(255, 212, 59, 0.85);
+  animation: pp-star-pop 520ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.pp-mm-sky__star.is-dim { color: #ffe9a3; opacity: 0.75; }
+
+/* Livro mágico com duas páginas */
+.pp-mm-book {
+  display: grid;
+  grid-template-columns: 1fr 1.125rem 1.25fr;
+  width: 100%;
+  max-width: 51.25rem;
+  padding: 0.75rem;
+  border-radius: 1.75rem;
+  background: linear-gradient(180deg, #9364E8 0%, #6e3fc9 100%);
+  box-shadow: 0 0.5rem 0 #4a2380, 0 1.125rem 1.875rem rgba(74, 35, 128, 0.3);
+}
+
+.pp-mm-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  padding: 1.3rem 1.1rem;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 212, 59, 0.25) 0 0.125rem, transparent 0.1875rem),
+    radial-gradient(circle at 80% 85%, rgba(240, 91, 155, 0.2) 0 0.125rem, transparent 0.1875rem),
+    linear-gradient(180deg, #fffdf6 0%, #fff4dc 100%);
+  min-height: 15.625rem;
+}
+
+.pp-mm-page--left { border-radius: 1.125rem 0.375rem 0.375rem 1.125rem; box-shadow: inset -0.625rem 0 0.875rem -0.625rem rgba(122, 69, 32, 0.25); }
+.pp-mm-page--right { border-radius: 0.375rem 1.125rem 1.125rem 0.375rem; box-shadow: inset 0.625rem 0 0.875rem -0.625rem rgba(122, 69, 32, 0.25); }
+
+.pp-mm-spine {
+  background: linear-gradient(90deg, #e8d3b0, #fff4dc 45%, #e8d3b0);
+}
+
+.pp-mm-badge {
+  padding: 0.3rem 0.95rem;
+  border-radius: var(--pp-radius-pill);
+  background: linear-gradient(90deg, #9364E8, #F05B9B);
+  color: #ffffff;
+  font-family: var(--pp-font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  box-shadow: 0 0.1875rem 0 #4a2380;
+}
+
+/* Orbe mágico de áudio */
+.pp-mm-orb {
+  width: 6.75rem;
+  height: 6.75rem;
+  border-radius: 50%;
+  border: 0.3125rem solid #ffffff;
+  background: radial-gradient(circle at 35% 30%, #ffd1e6 0%, #F05B9B 45%, #9364E8 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 0 0.375rem rgba(147, 100, 232, 0.2), 0 0.625rem 1.375rem rgba(147, 100, 232, 0.4);
+  transition: transform var(--pp-transition-bounce);
+  animation: pp-mm-glow 2.6s ease-in-out infinite;
+}
+
+.pp-mm-orb svg { width: 2.875rem; height: 2.875rem; }
+.pp-mm-orb:hover { transform: scale(1.07); }
+.pp-mm-orb:focus-visible,
+.pp-mm-listen:focus-visible { outline: 0.25rem solid #FFD43B; outline-offset: 0.1875rem; }
+
+@keyframes pp-mm-glow {
+  0%, 100% { box-shadow: 0 0 0 0.375rem rgba(147, 100, 232, 0.2), 0 0.625rem 1.375rem rgba(147, 100, 232, 0.4); }
+  50% { box-shadow: 0 0 0 0.75rem rgba(240, 91, 155, 0.15), 0 0.625rem 1.625rem rgba(147, 100, 232, 0.5); }
+}
+
+.pp-mm-listen {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1.05rem;
+  border-radius: var(--pp-radius-pill);
+  border: 0.125rem solid #d9c4ff;
+  background: #ffffff;
+  color: #4a2380;
+  font-family: var(--pp-font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 0.1875rem 0 #9364E8;
+}
+
+.pp-mm-listen svg { width: 1.25rem; height: 1.25rem; }
+.pp-mm-listen:hover { transform: translateY(-0.125rem); }
+
+.pp-mm-glued {
+  font-family: var(--pp-font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #4a2380;
+  word-break: break-all;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  border: 0.1875rem dashed #c9a8ff;
+}
+
+.pp-mm-phrase {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #334155;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.pp-mm-target {
+  font-family: var(--pp-font-display);
+  font-size: 1.6rem;
+  color: #4a2380;
+  white-space: nowrap;
+}
+
+.pp-mm-gap {
+  display: inline-block;
+  min-width: 2.875rem;
+  padding: 0 0.3rem;
+  margin: 0 0.1rem;
+  border-bottom: 0.25rem solid #F05B9B;
+  color: #F05B9B;
+  text-align: center;
+}
+
+.pp-mm-gap.is-correct { color: #2e9a48; border-color: #54C96B; }
+
+/* Alternativas */
+.pp-mm-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.pp-mm-option {
+  min-height: 3.625rem;
+  padding: 0.55rem 1rem;
+  border-radius: 1.125rem;
+  border: 0.1875rem solid #d9c4ff;
+  background: #ffffff;
+  font-family: var(--pp-font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #4a2380;
+  cursor: pointer;
+  box-shadow: 0 0.3125rem 0 #e6d8ff;
+  transition: transform var(--pp-transition-bounce), border-color var(--pp-transition-fast);
+}
+
+.pp-mm-option:hover:not(:disabled) { transform: translateY(-0.1875rem); border-color: #9364E8; }
+.pp-mm-option:active:not(:disabled) { transform: translateY(0.125rem); }
+.pp-mm-option:focus-visible { outline: 0.25rem solid #FFD43B; outline-offset: 0.125rem; }
+
+.pp-mm-option.is-correct {
+  background: linear-gradient(180deg, #84df96 0%, #54C96B 100%);
+  border-color: #ffffff;
+  color: #ffffff;
+  box-shadow: 0 0.3125rem 0 #2e9a48;
+  animation: pp-bounce-correct 500ms ease-out;
+}
+
+.pp-mm-option.is-wrong {
+  background: #fff1f4;
+  border-color: #f7a8c4;
+  color: #a3194b;
+  opacity: 0.65;
+  animation: pp-wobble-wrong 500ms ease-in-out;
+}
+
+/* Letras curtas (ortografia) ficam em grade de duas colunas */
+.pp-mm-options--short {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.pp-mm-options--short .pp-mm-option { font-size: 1.7rem; min-height: 4rem; }
+
+/* Montagem de sílabas */
+.pp-mm-build {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pp-mm-build.is-revealed .pp-mm-slot { border-color: #ffd36b; }
+
+.pp-mm-slot {
+  min-width: 4.375rem;
+  height: 3.875rem;
+  padding: 0 0.6rem;
+  border-radius: 1rem;
+  border: 0.1875rem dashed #c9a8ff;
+  background: #ffffff;
+  font-family: var(--pp-font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.pp-mm-slot.is-filled {
+  border: 0.1875rem solid #ffffff;
+  background: linear-gradient(180deg, #b392f2 0%, #9364E8 100%);
+  box-shadow: 0 0.3125rem 0 #5a2fa8;
+}
+
+.pp-mm-slot:disabled { cursor: default; }
+
+.pp-mm-bank {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pp-mm-syllable {
+  min-width: 4.375rem;
+  height: 3.625rem;
+  padding: 0 0.6rem;
+  border-radius: 1rem;
+  border: 0.1875rem solid #ffffff;
+  background: linear-gradient(180deg, #ff8fbd 0%, #F05B9B 100%);
+  box-shadow: 0 0.3125rem 0 #a8255e;
+  font-family: var(--pp-font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform var(--pp-transition-bounce), opacity var(--pp-transition-fast);
+}
+
+.pp-mm-syllable:hover:not(:disabled) { transform: translateY(-0.1875rem); }
+.pp-mm-syllable.is-used { opacity: 0.25; cursor: default; }
+.pp-mm-syllable:focus-visible,
+.pp-mm-slot:focus-visible { outline: 0.25rem solid #FFD43B; outline-offset: 0.125rem; }
+
+@media (max-width: 700px) {
+  .pp-mm-book { grid-template-columns: 1fr; grid-template-rows: auto 0.75rem auto; padding: 0.625rem; }
+  .pp-mm-page { min-height: 0; padding: 1rem 0.8rem; }
+  .pp-mm-page--left { border-radius: 1.125rem 1.125rem 0.375rem 0.375rem; box-shadow: inset 0 -0.625rem 0.875rem -0.625rem rgba(122, 69, 32, 0.25); }
+  .pp-mm-page--right { border-radius: 0.375rem 0.375rem 1.125rem 1.125rem; box-shadow: inset 0 0.625rem 0.875rem -0.625rem rgba(122, 69, 32, 0.25); }
+  .pp-mm-spine { background: linear-gradient(180deg, #e8d3b0, #fff4dc 45%, #e8d3b0); }
+  .pp-mm-orb { width: 5.375rem; height: 5.375rem; }
+  .pp-mm-sky__star { font-size: 1.2rem; }
+  .pp-mm-option { font-size: 1.15rem; }
+  .pp-mm-target { white-space: normal; }
+}

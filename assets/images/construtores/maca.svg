@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <radialGradient id="macaSkin" cx="35%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#ff8a8a"/>
+      <stop offset="55%" stop-color="#ef3b4f"/>
+      <stop offset="100%" stop-color="#b3172e"/>
+    </radialGradient>
+    <linearGradient id="macaLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8be59a"/>
+      <stop offset="100%" stop-color="#2e9a48"/>
+    </linearGradient>
+    <filter id="macaShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#7f1d1d" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <ellipse cx="100" cy="184" rx="54" ry="9" fill="#0f3d79" opacity="0.12"/>
+  <g filter="url(#macaShadow)">
+    <path d="M100 58 C80 40 34 46 32 98 C30 146 64 180 86 176 C94 175 96 170 100 170 C104 170 106 175 114 176 C136 180 170 146 168 98 C166 46 120 40 100 58 Z" fill="url(#macaSkin)" stroke="#9f1239" stroke-width="2"/>
+    <path d="M100 60 C100 44 104 30 112 22" stroke="#7a4520" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M108 40 C122 18 152 20 160 30 C148 48 122 52 108 40 Z" fill="url(#macaLeaf)" stroke="#1d6b33" stroke-width="2"/>
+    <ellipse cx="66" cy="88" rx="12" ry="20" fill="#ffffff" opacity="0.35" transform="rotate(20 66 88)"/>
+  </g>
+</svg>

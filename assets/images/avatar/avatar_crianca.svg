@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Avatar infantil">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="65%">
+      <stop offset="0" stop-color="#FFF3B0"/>
+      <stop offset="1" stop-color="#FFD43B"/>
+    </radialGradient>
+    <clipPath id="circle"><circle cx="100" cy="100" r="100"/></clipPath>
+  </defs>
+  <g clip-path="url(#circle)">
+    <rect width="200" height="200" fill="url(#bg)"/>
+    <!-- Camiseta -->
+    <path d="M30 210 C34 162 62 146 100 146 C138 146 166 162 170 210 Z" fill="#EF5350"/>
+    <path d="M82 148 C88 160 112 160 118 148 C112 146 88 146 82 148 Z" fill="#C62828"/>
+    <!-- Pescoço -->
+    <path d="M86 128 h28 v22 c-8 8 -20 8 -28 0 Z" fill="#E9A87C"/>
+    <!-- Orelhas -->
+    <ellipse cx="54" cy="100" rx="11" ry="14" fill="#F5BC92"/>
+    <ellipse cx="146" cy="100" rx="11" ry="14" fill="#F5BC92"/>
+    <ellipse cx="55" cy="101" rx="5" ry="7" fill="#E39A6F"/>
+    <ellipse cx="145" cy="101" rx="5" ry="7" fill="#E39A6F"/>
+    <!-- Rosto -->
+    <ellipse cx="100" cy="98" rx="46" ry="48" fill="#F8C9A0"/>
+    <!-- Cabelo -->
+    <path d="M54 96 C48 58 70 36 100 36 C132 36 154 56 146 96 C140 80 132 72 122 68 C120 76 110 80 98 76 C88 74 82 70 78 66 C70 74 60 82 54 96 Z" fill="#7A4A2A"/>
+    <path d="M78 46 C86 34 104 30 118 38 C108 36 96 38 88 46 Z" fill="#9C6440"/>
+    <!-- Olhos -->
+    <ellipse cx="82" cy="100" rx="6.5" ry="8" fill="#3B2416"/>
+    <ellipse cx="118" cy="100" rx="6.5" ry="8" fill="#3B2416"/>
+    <circle cx="84.5" cy="97" r="2.4" fill="#fff"/>
+    <circle cx="120.5" cy="97" r="2.4" fill="#fff"/>
+    <!-- Sobrancelhas -->
+    <path d="M73 86 q9 -6 18 -1" stroke="#7A4A2A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M109 85 q9 -5 18 1" stroke="#7A4A2A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <!-- Bochechas -->
+    <ellipse cx="70" cy="116" rx="9" ry="5.5" fill="#F48C8C" opacity="0.55"/>
+    <ellipse cx="130" cy="116" rx="9" ry="5.5" fill="#F48C8C" opacity="0.55"/>
+    <!-- Nariz -->
+    <path d="M97 108 q3 4 6 0" stroke="#D98B5F" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Sorriso -->
+    <path d="M84 120 Q100 138 116 120 Q100 128 84 120 Z" fill="#B23A3A"/>
+    <path d="M90 126 Q100 133 110 126 Q100 130 90 126 Z" fill="#F78C8C"/>
+  </g>
+</svg>

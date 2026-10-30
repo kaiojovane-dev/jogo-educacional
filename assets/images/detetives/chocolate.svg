@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="chocDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#78350f"/>
+      <stop offset="60%" stop-color="#581c87"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <linearGradient id="chocPiece" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#854d0e"/>
+      <stop offset="50%" stop-color="#713f12"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <linearGradient id="foilGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#e2e8f0"/>
+      <stop offset="70%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="wrapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="60%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#be123c"/>
+    </linearGradient>
+    <filter id="chocShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#0f3d79" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Shadow -->
+  <ellipse cx="100" cy="172" rx="55" ry="12" fill="#0f3d79" opacity="0.14"/>
+
+  <g filter="url(#chocShadow)">
+    <!-- Chocolate Body (Upper exposed pieces) -->
+    <rect x="58" y="32" width="84" height="65" rx="8" fill="#451a03"/>
+
+    <!-- Chocolate Blocks 2x2 visible -->
+    <!-- Block Top-Left -->
+    <rect x="63" y="36" width="35" height="26" rx="4" fill="url(#chocPiece)" stroke="#3f1d0b" stroke-width="1.5"/>
+    <path d="M 66 39 L 95 39 L 92 58 L 66 58 Z" fill="#92400e" opacity="0.3"/>
+
+    <!-- Block Top-Right -->
+    <rect x="102" y="36" width="35" height="26" rx="4" fill="url(#chocPiece)" stroke="#3f1d0b" stroke-width="1.5"/>
+    <path d="M 105 39 L 134 39 L 131 58 L 105 58 Z" fill="#92400e" opacity="0.3"/>
+
+    <!-- Block Bottom-Left -->
+    <rect x="63" y="66" width="35" height="26" rx="4" fill="url(#chocPiece)" stroke="#3f1d0b" stroke-width="1.5"/>
+    <!-- Block Bottom-Right -->
+    <rect x="102" y="66" width="35" height="26" rx="4" fill="url(#chocPiece)" stroke="#3f1d0b" stroke-width="1.5"/>
+
+    <!-- Shiny Silver/Gold Inner Foil (crinkled edges) -->
+    <path d="M 52 88 L 65 96 L 78 89 L 92 98 L 108 90 L 122 97 L 138 90 L 148 95 L 148 110 L 52 110 Z" fill="url(#foilGrad)" stroke="#94a3b8" stroke-width="1"/>
+
+    <!-- Outer Wrapper (Red festive paper) -->
+    <path d="M 52 102 L 148 102 L 145 162 C 145 166, 140 170, 135 170 L 65 170 C 60 170, 55 166, 55 162 Z" fill="url(#wrapGrad)"/>
+
+    <!-- Wrapper Gold Ribbon / Label Banner -->
+    <rect x="53" y="122" width="94" height="24" fill="#fbbf24" stroke="#f59e0b" stroke-width="1"/>
+    <!-- Cute Star in Center of Label -->
+    <polygon points="100,126 102,131 107,131 103,134 105,139 100,136 95,139 97,134 93,131 98,131" fill="#ffffff"/>
+    <circle cx="82" cy="134" r="2.5" fill="#ffffff" opacity="0.8"/>
+    <circle cx="118" cy="134" r="2.5" fill="#ffffff" opacity="0.8"/>
+  </g>
+</svg>

@@ -1,0 +1,316 @@
+/* ==========================================================================
+   PATATI PATATÁ — MOLDURA COMUM DOS JOGOS
+   Arquivo: css/game-shell.css
+   Painel central, cabeçalho da atividade, feedback, barra de
+   status e tela de conclusão compartilhados pelos jogos 2 a 5.
+   Cada jogo define suas cores pelas variáveis --g-*.
+   ========================================================================== */
+
+.pp-gs {
+  --g-main: #25A9E8;
+  --g-dark: #087FC5;
+  --g-deep: #0f3d79;
+  --g-light: #e6f6fd;
+  --g-soft: #bfe6f9;
+  gap: 0;
+}
+
+/* Temas de cada jogo (personalidade própria dentro da mesma identidade) */
+.pp-theme-mebolo {
+  --g-main: #54C96B;
+  --g-dark: #2e9a48;
+  --g-deep: #1d5e2f;
+  --g-light: #eaf9ed;
+  --g-soft: #bfeec9;
+}
+
+.pp-theme-construtores {
+  --g-main: #FF9838;
+  --g-dark: #e07818;
+  --g-deep: #7a3d0c;
+  --g-light: #fff3e4;
+  --g-soft: #ffd9ae;
+}
+
+.pp-theme-aventura {
+  --g-main: #54C96B;
+  --g-dark: #087FC5;
+  --g-deep: #164a3a;
+  --g-light: #e8f7f0;
+  --g-soft: #bfe8d4;
+}
+
+.pp-theme-missao {
+  --g-main: #F05B9B;
+  --g-dark: #9364E8;
+  --g-deep: #4a2380;
+  --g-light: #fbf0ff;
+  --g-soft: #ead8ff;
+}
+
+/* --------------------------------------------------------------------------
+   PAINEL CENTRAL
+   -------------------------------------------------------------------------- */
+.pp-gs-card {
+  width: 100%;
+  max-width: 58.75rem;
+  background: #ffffff;
+  border-radius: var(--pp-radius-cloud);
+  border: 0.2188rem solid var(--g-soft);
+  box-shadow: 0 1.25rem 2.8125rem rgba(15, 61, 121, 0.16), 0 0 0 0.375rem rgba(255, 255, 255, 0.85);
+  padding: 2rem 2.2rem 1.6rem;
+  position: relative;
+  z-index: 5;
+}
+
+.pp-gs-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pp-gs-stage[hidden],
+.pp-gs-result[hidden] { display: none; }
+
+.pp-gs-head { text-align: center; }
+
+.pp-gs-prompt {
+  font-family: var(--pp-font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--g-deep);
+  line-height: 1.2;
+}
+
+.pp-gs-hint {
+  margin-top: 0.25rem;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #5a759c;
+}
+
+.pp-gs-activity {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.pp-gs-enter { animation: pp-view-in 300ms ease-out; }
+
+.pp-gs-activity.is-locked button:not(.pp-btn-listen-again):not(.pp-mm-listen):not(.pp-mm-orb):not(.pp-mb-cat):not(.pp-cw-figure) {
+  pointer-events: none;
+}
+
+.pp-gs-activity.is-locked .pp-gs-actions { display: none; }
+
+/* Botões de ação (Limpar / Confirmar) */
+.pp-gs-actions {
+  display: flex;
+  gap: 0.9rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   FEEDBACK DE ACERTO / ERRO
+   -------------------------------------------------------------------------- */
+.pp-gs-feedback {
+  width: 100%;
+  max-width: 47.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem 0.85rem 1.3rem;
+  border-radius: var(--pp-radius-lg);
+  border: 0.1875rem solid transparent;
+  animation: pp-pop-in 220ms ease-out;
+}
+
+.pp-gs-feedback[hidden] { display: none; }
+
+.pp-gs-feedback__text {
+  font-family: var(--pp-font-display);
+  font-weight: 700;
+  font-size: 1.12rem;
+  line-height: 1.3;
+}
+
+.pp-gs-feedback--success {
+  background: #eafbee;
+  border-color: #8fe0a0;
+  color: #1d6b33;
+}
+
+.pp-gs-feedback--error {
+  background: #fff1f4;
+  border-color: #fbb5c7;
+  color: #a3194b;
+  animation: pp-wobble-wrong 420ms ease-in-out;
+}
+
+.pp-gs-feedback--reveal {
+  background: #fff8e1;
+  border-color: #ffe08a;
+  color: #7a4d00;
+}
+
+.pp-gs-next {
+  flex-shrink: 0;
+  font-size: 1.02rem;
+  padding: 0.6rem 1.2rem;
+}
+
+.pp-gs-next[hidden] { display: none; }
+
+/* --------------------------------------------------------------------------
+   BARRA DE STATUS
+   -------------------------------------------------------------------------- */
+.pp-gs-status {
+  width: 100%;
+  max-width: 51.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+  padding-top: 1rem;
+  border-top: 0.125rem dashed var(--g-soft);
+}
+
+.pp-gs .pp-round-counter { color: var(--g-deep); min-width: 7.5rem; }
+
+.pp-gs-progress {
+  flex: 1;
+  min-width: 8.75rem;
+  max-width: 18.75rem;
+  height: 0.875rem;
+  border-radius: var(--pp-radius-pill);
+  background: #e2e8f0;
+  border: 0.0938rem solid #cbd5e1;
+  overflow: hidden;
+}
+
+.pp-gs-progress__fill {
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--g-main), var(--g-dark));
+  transition: width 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   TELA DE CONCLUSÃO
+   -------------------------------------------------------------------------- */
+.pp-gs-result {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0 0.5rem;
+  animation: pp-view-in 400ms ease-out;
+}
+
+.pp-gs-result__badge {
+  width: 7rem;
+  height: 7rem;
+  border: 0.3125rem solid #FFD43B;
+  background: #ffffff;
+  margin-top: -0.5rem;
+  animation: pp-gentle-hover 3s ease-in-out infinite;
+}
+
+.pp-gs-result__title {
+  font-family: var(--pp-font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--g-deep);
+}
+
+.pp-gs-result__stars { font-size: 3rem; padding: 0.35rem 1.4rem; }
+
+.pp-gs-result__message {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #334155;
+  max-width: 32.5rem;
+}
+
+.pp-gs-result__note {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--g-dark);
+}
+
+.pp-gs-result__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.6rem;
+  position: relative;
+  z-index: 2;
+}
+
+.pp-gs .pp-result-summary-grid { margin: 0.4rem 0; }
+
+/* Elementos de palavra reutilizáveis */
+.pp-word-chip {
+  font-family: var(--pp-font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--g-deep);
+  background: #ffffff;
+  border: 0.1875rem solid var(--g-main);
+  border-radius: 1rem;
+  padding: 0.45rem 1rem;
+  min-height: 3.25rem;
+  min-width: 3.25rem;
+  cursor: pointer;
+  box-shadow: 0 0.3125rem 0 var(--g-soft), 0 0.5rem 0.875rem rgba(15, 61, 121, 0.08);
+  transition: transform var(--pp-transition-bounce), box-shadow var(--pp-transition-fast), opacity var(--pp-transition-fast);
+}
+
+.pp-word-chip:hover:not(:disabled) { transform: translateY(-0.1875rem); }
+.pp-word-chip:active:not(:disabled) { transform: translateY(0.125rem); box-shadow: 0 0.125rem 0 var(--g-soft); }
+.pp-word-chip:focus-visible { outline: 0.25rem solid #FFD43B; outline-offset: 0.125rem; }
+
+/* --------------------------------------------------------------------------
+   RESPONSIVIDADE DA MOLDURA
+   -------------------------------------------------------------------------- */
+@media (max-width: 760px) {
+  .pp-gs-card { padding: 1.6rem 1.1rem 1.2rem; border-radius: 2rem; }
+  .pp-gs-prompt { font-size: 1.4rem; }
+  .pp-gs-hint { font-size: 0.98rem; }
+  .pp-gs-feedback { flex-direction: column; text-align: center; padding: 0.85rem 1rem; }
+  .pp-gs-status { justify-content: center; }
+  .pp-gs-progress { order: 3; flex-basis: 100%; max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .pp-gs .pp-game-btn-back { width: 3.125rem; height: 3.125rem; min-width: 3.125rem; }
+  .pp-gs .pp-game-btn-speaker { width: 2.625rem; height: 2.625rem; min-width: 2.625rem; }
+  .pp-gs-result__title { font-size: 1.7rem; }
+  .pp-gs-result__stars { font-size: 2.4rem; }
+  .pp-gs-result__actions .pp-btn { width: 100%; }
+  .pp-word-chip { font-size: 1.15rem; padding: 0.4rem 0.75rem; min-height: 3rem; }
+}
+
+/* Placar final compacto no celular: caixas lado a lado em vez de empilhadas */
+@media (max-width: 480px) {
+  .pp-result-summary-grid { gap: 0.6rem; width: 100%; }
+  .pp-result-stat-box {
+    flex: 1 1 5.5rem;
+    min-width: 0;
+    padding: 0.6rem 0.6rem;
+    text-align: center;
+  }
+  .pp-stat-label { font-size: 0.72rem; }
+  .pp-stat-value { font-size: 1.3rem; line-height: 1.15; }
+}

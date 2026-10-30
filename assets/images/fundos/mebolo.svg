@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax slice">
+  <!-- Fundo do jogo O Gato Mebolo: jardim com cerquinha, balões, novelos e patinhas -->
+  <defs>
+    <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5fcdf2"/>
+      <stop offset=".6" stop-color="#b4ecf0"/>
+      <stop offset="1" stop-color="#e2fbe8"/>
+    </linearGradient>
+    <linearGradient id="morro" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fe39d"/>
+      <stop offset="1" stop-color="#54c96b"/>
+    </linearGradient>
+    <symbol id="nuvem" viewBox="0 0 200 90">
+      <g fill="#fff">
+        <ellipse cx="100" cy="64" rx="96" ry="24"/>
+        <circle cx="68" cy="50" r="32"/>
+        <circle cx="116" cy="38" r="40"/>
+        <circle cx="160" cy="56" r="24"/>
+      </g>
+    </symbol>
+    <!-- Nuvem em forma de cabeça de gatinho -->
+    <symbol id="nuvemGato" viewBox="0 0 160 130">
+      <g fill="#fff">
+        <path d="M22 60 L30 6 L66 38 Z"/>
+        <path d="M138 60 L130 6 L94 38 Z"/>
+        <ellipse cx="80" cy="76" rx="70" ry="52"/>
+      </g>
+      <g fill="#bfe6f9">
+        <circle cx="56" cy="72" r="6"/><circle cx="104" cy="72" r="6"/>
+        <path d="M74 88 L86 88 L80 95 Z"/>
+      </g>
+    </symbol>
+    <symbol id="balao" viewBox="0 0 60 170">
+      <path d="M30 80 Q22 120 34 170" stroke="#ffffff" stroke-width="2" fill="none" opacity=".9"/>
+      <ellipse cx="30" cy="38" rx="28" ry="36"/>
+      <path d="M24 74 L36 74 L30 82 Z"/>
+      <ellipse cx="20" cy="24" rx="7" ry="11" fill="#fff" opacity=".45"/>
+    </symbol>
+    <symbol id="pata" viewBox="-30 -34 60 64">
+      <ellipse cy="10" rx="18" ry="15"/>
+      <circle cx="-17" cy="-10" r="7"/><circle cx="-6" cy="-22" r="7"/>
+      <circle cx="6" cy="-22" r="7"/><circle cx="17" cy="-10" r="7"/>
+    </symbol>
+    <symbol id="novelo" viewBox="-50 -50 100 100">
+      <circle r="44"/>
+      <g fill="none" stroke="#ffffff" stroke-width="4" opacity=".55">
+        <path d="M-40 -14 Q0 -40 40 -14"/>
+        <path d="M-44 6 Q0 -22 44 6"/>
+        <path d="M-36 26 Q0 0 36 26"/>
+        <path d="M-10 -42 Q20 0 -6 42"/>
+      </g>
+    </symbol>
+    <symbol id="tulipa" viewBox="0 0 40 120">
+      <rect x="18" y="30" width="5" height="90" fill="#2e9a48"/>
+      <path d="M21 90 Q2 70 6 56 Q16 70 21 80 Z" fill="#3aae52"/>
+      <path d="M4 10 L12 22 L20 4 L28 22 L36 10 L34 36 Q20 48 6 36 Z"/>
+    </symbol>
+  </defs>
+
+  <style>
+    .flutua { animation: flutua 6s ease-in-out infinite; }
+    .flutua2 { animation: flutua 7.5s ease-in-out infinite -3s; }
+    .balanca { transform-box: fill-box; transform-origin: bottom center; animation: balanca 4s ease-in-out infinite; }
+    @keyframes flutua { 50% { transform: translateY(-16px); } }
+    @keyframes balanca { 50% { transform: rotate(5deg); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+
+  <rect width="1600" height="1000" fill="url(#ceu)"/>
+
+  <!-- Sol -->
+  <g transform="translate(1470 150)">
+    <circle r="92" fill="#fff6b0" opacity=".6"/>
+    <circle r="66" fill="#ffd43b"/>
+    <path d="M-28 -8 Q-20 -16 -12 -8" stroke="#5a3a12" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M12 -8 Q20 -16 28 -8" stroke="#5a3a12" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M-16 14 Q0 30 16 14" stroke="#5a3a12" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Nuvens -->
+  <use href="#nuvemGato" xlink:href="#nuvemGato" x="140" y="110" width="190" height="154" class="flutua"/>
+  <use href="#nuvem" xlink:href="#nuvem" x="620" y="130" width="220" height="99" opacity=".9" class="flutua2"/>
+  <use href="#nuvem" xlink:href="#nuvem" x="1100" y="230" width="190" height="86" opacity=".85" class="flutua"/>
+
+  <!-- Balões do Mebolo -->
+  <g class="flutua2">
+    <use href="#balao" xlink:href="#balao" x="1310" y="300" width="64" height="181" fill="#ff4d6d"/>
+    <use href="#balao" xlink:href="#balao" x="1360" y="270" width="64" height="181" fill="#ffd43b"/>
+    <use href="#balao" xlink:href="#balao" x="1410" y="310" width="64" height="181" fill="#25a9e8"/>
+    <use href="#balao" xlink:href="#balao" x="1380" y="340" width="56" height="158" fill="#54c96b"/>
+  </g>
+  <g class="flutua">
+    <use href="#balao" xlink:href="#balao" x="60" y="380" width="58" height="164" fill="#9364e8"/>
+    <use href="#balao" xlink:href="#balao" x="104" y="410" width="54" height="153" fill="#ff9838"/>
+  </g>
+
+  <!-- Morros -->
+  <path d="M0 690 Q320 600 680 680 T1340 660 T1600 640 V1000 H0 Z" fill="url(#morro)"/>
+
+  <!-- Cerquinha branca -->
+  <g fill="#ffffff">
+    <rect x="0" y="760" width="1600" height="14" rx="6"/>
+    <rect x="0" y="800" width="1600" height="14" rx="6"/>
+  </g>
+  <g fill="#ffffff" stroke="#d6efe0" stroke-width="3">
+    <path d="M20 840 V740 L40 720 L60 740 V840 Z"/>
+    <path d="M100 840 V740 L120 720 L140 740 V840 Z"/>
+    <path d="M180 840 V740 L200 720 L220 740 V840 Z"/>
+    <path d="M260 840 V740 L280 720 L300 740 V840 Z"/>
+    <path d="M340 840 V740 L360 720 L380 740 V840 Z"/>
+    <path d="M420 840 V740 L440 720 L460 740 V840 Z"/>
+    <path d="M500 840 V740 L520 720 L540 740 V840 Z"/>
+    <path d="M580 840 V740 L600 720 L620 740 V840 Z"/>
+    <path d="M660 840 V740 L680 720 L700 740 V840 Z"/>
+    <path d="M740 840 V740 L760 720 L780 740 V840 Z"/>
+    <path d="M820 840 V740 L840 720 L860 740 V840 Z"/>
+    <path d="M900 840 V740 L920 720 L940 740 V840 Z"/>
+    <path d="M980 840 V740 L1000 720 L1020 740 V840 Z"/>
+    <path d="M1060 840 V740 L1080 720 L1100 740 V840 Z"/>
+    <path d="M1140 840 V740 L1160 720 L1180 740 V840 Z"/>
+    <path d="M1220 840 V740 L1240 720 L1260 740 V840 Z"/>
+    <path d="M1300 840 V740 L1320 720 L1340 740 V840 Z"/>
+    <path d="M1380 840 V740 L1400 720 L1420 740 V840 Z"/>
+    <path d="M1460 840 V740 L1480 720 L1500 740 V840 Z"/>
+    <path d="M1540 840 V740 L1560 720 L1580 740 V840 Z"/>
+  </g>
+
+  <!-- Gramado da frente -->
+  <path d="M0 830 Q400 790 800 825 T1600 815 V1000 H0 Z" fill="#54c96b"/>
+  <path d="M0 920 Q500 885 900 912 T1600 900 V1000 H0 Z" fill="#3aae52"/>
+
+  <!-- Tulipas -->
+  <use href="#tulipa" xlink:href="#tulipa" x="40" y="760" width="40" height="120" fill="#f05b9b" class="balanca"/>
+  <use href="#tulipa" xlink:href="#tulipa" x="90" y="780" width="36" height="108" fill="#ffd43b" class="balanca"/>
+  <use href="#tulipa" xlink:href="#tulipa" x="1480" y="770" width="40" height="120" fill="#ff4d6d" class="balanca"/>
+  <use href="#tulipa" xlink:href="#tulipa" x="1530" y="790" width="36" height="108" fill="#9364e8" class="balanca"/>
+
+  <!-- Novelos de lã -->
+  <use href="#novelo" xlink:href="#novelo" x="200" y="860" width="90" height="90" fill="#f05b9b"/>
+  <use href="#novelo" xlink:href="#novelo" x="1320" y="870" width="80" height="80" fill="#25a9e8"/>
+  <path d="M290 920 Q360 960 430 930 T560 950" stroke="#f05b9b" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- Patinhas pelo gramado -->
+  <g fill="#2e9a48" opacity=".5">
+    <use href="#pata" xlink:href="#pata" x="600" y="930" width="38" height="40" transform="rotate(-15 619 950)"/>
+    <use href="#pata" xlink:href="#pata" x="680" y="900" width="38" height="40" transform="rotate(15 699 920)"/>
+    <use href="#pata" xlink:href="#pata" x="760" y="935" width="38" height="40" transform="rotate(-15 779 955)"/>
+    <use href="#pata" xlink:href="#pata" x="840" y="900" width="38" height="40" transform="rotate(15 859 920)"/>
+    <use href="#pata" xlink:href="#pata" x="920" y="935" width="38" height="40" transform="rotate(-15 939 955)"/>
+    <use href="#pata" xlink:href="#pata" x="1000" y="900" width="38" height="40" transform="rotate(15 1019 920)"/>
+  </g>
+</svg>

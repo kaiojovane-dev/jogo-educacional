@@ -1,0 +1,115 @@
+/* ==========================================================================
+   PATATI PATATÁ — SISTEMA VISUAL OFICIAL
+   Arquivo: css/base.css
+   Reset, Tipografia e Cenário Infantil Vivo (Céu, Nuvens, Sol, Arco-íris, Colinas)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Titan+One&family=Fredoka:wght@400;500;600;700;800;900&family=Nunito:wght@600;700;800;900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Escala fluida: todas as medidas usam rem, então em telas grandes a
+   interface inteira cresce na mesma proporção (base 1440×810 = 16px). */
+html {
+  font-size: max(16px, min(1.1111vw, 1.975vh));
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+/* Telas muito estreitas: interface levemente compactada */
+@media (max-width: 359px) {
+  html { font-size: 15px; }
+}
+
+@media (max-width: 299px) {
+  html { font-size: 14px; }
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--pp-font-family);
+  font-size: var(--pp-text-base);
+  color: var(--pp-text-main);
+  line-height: 1.4;
+  overflow-x: hidden;
+  background-color: var(--pp-sky-top);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* --------------------------------------------------------------------------
+   CENÁRIO DE FUNDO DE CADA TELA
+   Ilustrações em assets/images/fundos/, trocadas pelo atributo
+   data-page do <body> (definido em js/app.js).
+   -------------------------------------------------------------------------- */
+.pp-scenery {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: var(--pp-z-scenery);
+  overflow: hidden;
+  background: #8fd8fb url('../assets/images/fundos/jogos.jpg') center bottom / cover no-repeat;
+}
+
+body[data-page="jogos"] .pp-scenery { background-image: url('../assets/images/fundos/jogos.jpg'); background-color: #8fd8fb; }
+body[data-page="conquistas"] .pp-scenery { background-image: url('../assets/images/fundos/conquistas.jpg'); background-color: #ffe9b0; }
+body[data-page="sobre"] .pp-scenery { background-image: url('../assets/images/fundos/sobre.jpg'); background-color: #a6e0fc; }
+body[data-page="game-detetives"] .pp-scenery { background-image: url('../assets/images/fundos/detetives.jpg'); background-color: #9fdcfb; }
+body[data-page="game-mebolo"] .pp-scenery { background-image: url('../assets/images/fundos/mebolo.jpg'); background-color: #c8f3dc; }
+body[data-page="game-construtores"] .pp-scenery { background-image: url('../assets/images/fundos/construtores.jpg'); background-color: #ffe1b8; }
+body[data-page="game-aventura"] .pp-scenery { background-image: url('../assets/images/fundos/aventura.jpg'); background-color: #bfe9fb; }
+body[data-page="game-missao"] .pp-scenery { background-image: url('../assets/images/fundos/missao.jpg'); background-color: #8a5ad8; }
+
+/* --------------------------------------------------------------------------
+   ESTRUTURA GERAL DA APLICAÇÃO (Single Page Layout)
+   -------------------------------------------------------------------------- */
+.pp-app-root {
+  position: relative;
+  z-index: var(--pp-z-content);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.pp-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 3rem;
+}
+
+/* Utilitários tipográficos */
+.pp-text-center { text-align: center; }
+.pp-font-bold { font-weight: 700; }
+.pp-font-bubbly { font-family: var(--pp-font-display); font-weight: 800; }
+
+/* Ícones SVG com tamanho no atributo acompanham a escala fluida */
+:where(svg[width="12"]) { width: 0.75rem; }
+:where(svg[height="12"]) { height: 0.75rem; }
+:where(svg[width="18"]) { width: 1.125rem; }
+:where(svg[height="18"]) { height: 1.125rem; }
+:where(svg[width="20"]) { width: 1.25rem; }
+:where(svg[height="20"]) { height: 1.25rem; }
+:where(svg[width="22"]) { width: 1.375rem; }
+:where(svg[height="22"]) { height: 1.375rem; }
+:where(svg[width="24"]) { width: 1.5rem; }
+:where(svg[height="24"]) { height: 1.5rem; }
+:where(svg[width="26"]) { width: 1.625rem; }
+:where(svg[height="26"]) { height: 1.625rem; }
+:where(svg[width="28"]) { width: 1.75rem; }
+:where(svg[height="28"]) { height: 1.75rem; }
+:where(svg[width="30"]) { width: 1.875rem; }
+:where(svg[height="30"]) { height: 1.875rem; }
+:where(svg[width="64"]) { width: 4rem; }
+:where(svg[height="64"]) { height: 4rem; }
+:where(svg[width="80"]) { width: 5rem; }
+:where(svg[height="80"]) { height: 5rem; }

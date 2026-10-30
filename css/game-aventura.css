@@ -1,0 +1,264 @@
+/* ==========================================================================
+   PATATI PATATÁ — JOGO: AVENTURA DO RE G
+   Arquivo: css/game-aventura.css
+   Trilha na floresta, placas de madeira e alternativas de letras.
+   ========================================================================== */
+
+/* Trilha com as 10 paradas */
+.pp-ad-trail {
+  position: relative;
+  width: 100%;
+  height: 7.5rem;
+  border-radius: 1.625rem;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 70% at 15% 120%, #6fd483 0%, transparent 70%),
+    radial-gradient(ellipse 60% 70% at 85% 120%, #4cbf63 0%, transparent 70%),
+    linear-gradient(180deg, #bfe9ff 0%, #dff4ff 45%, #a8e3b4 46%, #6fd483 100%);
+  border: 0.1875rem solid #bfe8d4;
+}
+
+.pp-ad-trail__path {
+  position: absolute;
+  left: 3%;
+  right: 3%;
+  bottom: 1.375rem;
+  height: 1.375rem;
+  border-radius: var(--pp-radius-pill);
+  background: linear-gradient(180deg, #f3d39b 0%, #e2b56d 100%);
+  box-shadow: inset 0 -0.1875rem 0 rgba(150, 95, 30, 0.25);
+}
+
+.pp-ad-stop {
+  position: absolute;
+  top: 50%;
+  width: 1.625rem;
+  height: 1.625rem;
+  margin-left: -0.8125rem;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #ffffff;
+  border: 0.1875rem solid #d2a35a;
+  font-family: var(--pp-font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #8a5a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background var(--pp-transition-fast), border-color var(--pp-transition-fast);
+}
+
+.pp-ad-stop.is-done {
+  background: #FFD43B;
+  border-color: #ffffff;
+  color: #6b4400;
+  box-shadow: 0 0 0 0.1875rem #f2b705;
+}
+
+.pp-ad-stop.is-current { border-color: #087FC5; box-shadow: 0 0 0 0.1875rem #bfe6f9; }
+
+.pp-ad-flag {
+  position: absolute;
+  bottom: 0.625rem;
+  width: 0.375rem;
+  height: 2.875rem;
+  margin-left: 0.5rem;
+  background: #8a4f22;
+  border-radius: 0.1875rem;
+}
+
+.pp-ad-flag::after {
+  content: '';
+  position: absolute;
+  left: 0.375rem;
+  top: 0.125rem;
+  border-left: 1.625rem solid #F05B9B;
+  border-top: 0.625rem solid transparent;
+  border-bottom: 0.625rem solid transparent;
+}
+
+.pp-ad-walker {
+  position: absolute;
+  bottom: 0.875rem;
+  width: 3.375rem;
+  height: 3.375rem;
+  margin-left: -1.6875rem;
+  border-radius: 50%;
+  border: 0.1875rem solid #ffffff;
+  box-shadow: 0 0.375rem 0.75rem rgba(15, 61, 121, 0.3);
+  z-index: 3;
+  transition: left 700ms cubic-bezier(0.34, 1.3, 0.64, 1);
+  animation: pp-gentle-hover 1.8s ease-in-out infinite;
+}
+
+/* Árvores decorativas desenhadas em CSS */
+.pp-ad-tree {
+  position: absolute;
+  bottom: 2.5rem;
+  width: 2.875rem;
+  height: 3.5rem;
+  border-radius: 50% 50% 46% 46%;
+  background: radial-gradient(circle at 35% 30%, #8be59a 0%, #3aae52 70%);
+  box-shadow: inset -0.25rem -0.375rem 0 rgba(29, 94, 47, 0.25);
+}
+
+.pp-ad-tree::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -0.875rem;
+  width: 0.5625rem;
+  height: 1.125rem;
+  margin-left: -0.2812rem;
+  background: #8a4f22;
+  border-radius: 0.1875rem;
+}
+
+.pp-ad-tree--1 { left: 1%; transform: scale(0.85); }
+.pp-ad-tree--2 { left: 44%; bottom: 3.5rem; transform: scale(0.6); opacity: 0.85; }
+.pp-ad-tree--3 { right: 1%; transform: scale(0.95); }
+
+.pp-ad-bush {
+  position: absolute;
+  right: 22%;
+  bottom: 3.125rem;
+  width: 3.125rem;
+  height: 1.375rem;
+  border-radius: 1.875rem 1.875rem 0.5rem 0.5rem;
+  background: #4cbf63;
+  opacity: 0.8;
+}
+
+/* Placa da palavra */
+.pp-ad-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pp-ad-sign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pp-ad-sign__board {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 1.125rem;
+  border: 0.25rem solid #7a4520;
+  background:
+    repeating-linear-gradient(180deg, rgba(122, 69, 32, 0) 0 1rem, rgba(122, 69, 32, 0.12) 1rem 1.125rem),
+    linear-gradient(180deg, #edc189 0%, #d79b5c 100%);
+  box-shadow: inset 0 0.1875rem 0 rgba(255, 236, 200, 0.6), 0 0.375rem 0 #5e3416, 0 0.75rem 1.25rem rgba(90, 48, 18, 0.25);
+  font-family: var(--pp-font-display);
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #4a2a0a;
+}
+
+.pp-ad-sign__post {
+  width: 1rem;
+  height: 2.125rem;
+  background: linear-gradient(90deg, #8a4f22, #6b3c1a);
+  border-radius: 0 0 0.25rem 0.25rem;
+}
+
+.pp-ad-gap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4rem;
+  height: 3.5rem;
+  margin: 0 0.2rem;
+  padding: 0 0.4rem;
+  border-radius: 0.75rem;
+  background: #fffaf0;
+  border: 0.1875rem dashed #087FC5;
+  color: #087FC5;
+  transition: background var(--pp-transition-fast);
+}
+
+.pp-ad-gap.is-correct,
+.pp-ad-gap.is-revealed {
+  border-style: solid;
+  border-color: #ffffff;
+  background: #54C96B;
+  color: #ffffff;
+  animation: pp-bounce-correct 500ms ease-out;
+}
+
+.pp-ad-gap.is-revealed { background: #FF9838; }
+
+.pp-ad-gap.is-wrong {
+  border-style: solid;
+  border-color: #ffffff;
+  background: #F05B9B;
+  color: #ffffff;
+  animation: pp-wobble-wrong 500ms ease-in-out;
+}
+
+.pp-ad-scene .pp-btn-listen-again {
+  background: linear-gradient(180deg, #e8f7f0 0%, #c4ecd6 100%);
+  color: #164a3a;
+  border-color: #8fd6b1;
+  box-shadow: 0 0.1875rem 0 #2e9a48;
+}
+
+/* Alternativas de letras */
+.pp-ad-options {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  max-width: 35rem;
+}
+
+.pp-ad-options--2 { grid-template-columns: repeat(2, 1fr); max-width: 23.75rem; }
+.pp-ad-options--4 { grid-template-columns: repeat(4, 1fr); }
+
+.pp-ad-option {
+  min-height: 4.5rem;
+  border-radius: 1.375rem;
+  border: 0.25rem solid #ffffff;
+  background: linear-gradient(180deg, #6fcdf6 0%, #25A9E8 60%, #087FC5 100%);
+  box-shadow: 0 0.375rem 0 #065a8c, 0 0.625rem 1.125rem rgba(8, 127, 197, 0.3);
+  font-family: var(--pp-font-display);
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 0.125rem 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform var(--pp-transition-bounce);
+}
+
+.pp-ad-option:hover:not(:disabled) { transform: translateY(-0.25rem); }
+.pp-ad-option:active:not(:disabled) { transform: translateY(0.1875rem); }
+.pp-ad-option:focus-visible { outline: 0.25rem solid #FFD43B; outline-offset: 0.1875rem; }
+
+.pp-ad-option.is-correct {
+  background: linear-gradient(180deg, #84df96 0%, #54C96B 60%, #2e9a48 100%);
+  box-shadow: 0 0.375rem 0 #1f7a35;
+  animation: pp-bounce-correct 500ms ease-out;
+}
+
+.pp-ad-option.is-wrong {
+  background: linear-gradient(180deg, #ffb0cd 0%, #F05B9B 100%);
+  box-shadow: 0 0.375rem 0 #a8255e;
+  opacity: 0.55;
+  animation: pp-wobble-wrong 500ms ease-in-out;
+}
+
+@media (max-width: 640px) {
+  .pp-ad-trail { height: 6.25rem; }
+  .pp-ad-stop { width: 1.25rem; height: 1.25rem; margin-left: -0.625rem; font-size: 0.6rem; border-width: 0.125rem; }
+  .pp-ad-walker { width: 2.625rem; height: 2.625rem; margin-left: -1.3125rem; }
+  .pp-ad-sign__board { font-size: 1.9rem; padding: 0.6rem 1rem; }
+  .pp-ad-gap { min-width: 3.125rem; height: 2.875rem; }
+  .pp-ad-options--4 { grid-template-columns: repeat(2, 1fr); }
+  .pp-ad-option { min-height: 3.875rem; font-size: 1.8rem; }
+}

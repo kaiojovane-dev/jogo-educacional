@@ -1,0 +1,257 @@
+/* ==========================================================================
+   PATATI PATATÁ — JOGO: O GATO MEBOLO
+   Arquivo: css/game-mebolo.css
+   Gatinho com balão de diálogo, cartões de palavras e tesourinha.
+   ========================================================================== */
+
+.pp-mb-scene {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 45rem;
+}
+
+.pp-mb-cat {
+  width: 8rem;
+  height: 8.75rem;
+  flex-shrink: 0;
+  border: none;
+  background: radial-gradient(circle at 50% 70%, #eaf9ed 0%, rgba(234, 249, 237, 0) 70%);
+  cursor: pointer;
+  padding: 0;
+  transition: transform var(--pp-transition-bounce);
+}
+
+.pp-mb-cat img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: pp-gentle-hover 3.2s ease-in-out infinite;
+}
+
+.pp-mb-cat:hover { transform: scale(1.05) rotate(-2deg); }
+.pp-mb-cat.is-talking img { animation: pp-bounce-correct 500ms ease-out; }
+.pp-mb-cat:focus-visible { outline: 0.25rem solid #FFD43B; outline-offset: 0.125rem; border-radius: 1.5rem; }
+
+.pp-mb-balloon {
+  position: relative;
+  flex: 1;
+  background: #eaf9ed;
+  border: 0.1875rem solid #8fe0a0;
+  border-radius: 1.75rem;
+  padding: 0.9rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  box-shadow: 0 0.375rem 0 #bfeec9;
+}
+
+.pp-mb-balloon::before {
+  content: '';
+  position: absolute;
+  left: -0.9375rem;
+  top: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #eaf9ed;
+  border-left: 0.1875rem solid #8fe0a0;
+  border-bottom: 0.1875rem solid #8fe0a0;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.pp-mb-balloon__text {
+  font-family: var(--pp-font-display);
+  font-weight: 700;
+  font-size: 1.12rem;
+  color: #1d5e2f;
+}
+
+.pp-mb-balloon .pp-btn-listen-again {
+  margin-top: 0;
+  background: linear-gradient(180deg, #ffffff 0%, #dcf7e2 100%);
+  color: #1d6b33;
+  border-color: #8fe0a0;
+  box-shadow: 0 0.1875rem 0 #2e9a48;
+}
+
+.pp-mb-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Linha onde a frase é montada */
+.pp-mb-line {
+  width: 100%;
+  max-width: 47.5rem;
+  min-height: 5.125rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem;
+  border-radius: 1.5rem;
+  background: #f6fcf7;
+  border: 0.1875rem dashed #8fe0a0;
+}
+
+.pp-mb-line--find {
+  border-style: solid;
+  background: #ffffff;
+}
+
+.pp-mb-line.is-revealed { border-color: #ffd36b; background: #fffbea; }
+
+.pp-mb-line__placeholder {
+  color: #7aa287;
+  font-weight: 700;
+}
+
+.pp-mb-bank {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.pp-word-chip.is-placed {
+  background: linear-gradient(180deg, #7ddc8e 0%, #54C96B 100%);
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 0.3125rem 0 #2e9a48;
+  text-shadow: 0 0.0625rem 0 rgba(0, 0, 0, 0.18);
+}
+
+.pp-word-chip.is-used {
+  opacity: 0.35;
+  cursor: default;
+  box-shadow: none;
+  border-style: dashed;
+}
+
+.pp-word-chip.is-preview {
+  font-size: 1.1rem;
+  min-height: 2.625rem;
+  padding: 0.3rem 0.8rem;
+  background: #ffffff;
+}
+
+.pp-word-chip.is-findable { border-color: #b7e7c2; }
+.pp-word-chip.is-wrong { animation: pp-wobble-wrong 500ms ease-in-out; border-color: #f47aa0; background: #fff1f4; }
+.pp-word-chip.is-found {
+  background: linear-gradient(180deg, #fff3a6 0%, #FFD43B 100%);
+  border-color: #ffffff;
+  color: #6b4400;
+  box-shadow: 0 0.3125rem 0 #d49b00;
+  animation: pp-bounce-correct 500ms ease-out;
+}
+
+/* Letras grudadas com tesourinhas entre elas */
+.pp-mb-letters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 0.6rem;
+  padding: 0.9rem 0.6rem;
+  border-radius: 1.5rem;
+  background: #f6fcf7;
+  border: 0.1875rem solid #bfeec9;
+  max-width: 100%;
+}
+
+.pp-mb-letters.is-revealed { border-color: #ffd36b; background: #fffbea; }
+
+.pp-mb-letter-group {
+  display: inline-flex;
+  align-items: stretch;
+}
+
+.pp-mb-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.375rem;
+  height: 3.25rem;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  border: 0.1562rem solid #8fe0a0;
+  box-shadow: 0 0.25rem 0 #bfeec9;
+  font-family: var(--pp-font-display);
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #1d5e2f;
+}
+
+.pp-mb-gap {
+  position: relative;
+  width: 1.375rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.pp-mb-gap::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 0.25rem;
+  border-radius: 0.25rem;
+  transform: translateX(-50%);
+  background: transparent;
+  transition: background var(--pp-transition-fast), top var(--pp-transition-fast), bottom var(--pp-transition-fast);
+}
+
+.pp-mb-gap:hover::after { background: #bfeec9; }
+
+.pp-mb-gap.is-cut { width: 1.875rem; }
+.pp-mb-gap.is-cut::after {
+  top: -0.25rem;
+  bottom: -0.25rem;
+  width: 0.375rem;
+  background: #F05B9B;
+  box-shadow: 0 0 0 0.1875rem #ffe0ee;
+}
+
+.pp-mb-gap:focus-visible { outline: 0.1875rem solid #FFD43B; outline-offset: 0.0625rem; border-radius: 0.375rem; }
+
+.pp-mb-preview,
+.pp-mb-corrected {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pp-mb-corrected[hidden] { display: none; }
+
+.pp-mb-preview__label {
+  font-weight: 800;
+  color: #5a759c;
+  margin-right: 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .pp-mb-scene { flex-direction: column; text-align: center; gap: 0.25rem; }
+  .pp-mb-cat { width: 6rem; height: 6.5rem; }
+  .pp-mb-balloon { align-items: center; }
+  .pp-mb-balloon::before {
+    left: 50%;
+    top: -0.875rem;
+    transform: translateX(-50%) rotate(135deg);
+  }
+  .pp-mb-balloon { padding: 0.7rem 0.9rem; }
+  .pp-mb-balloon__text { font-size: 1rem; }
+  .pp-mb-letters { padding: 0.7rem 0.3rem; }
+  .pp-mb-letter { width: 1.6875rem; height: 2.625rem; font-size: 1.2rem; border-radius: 0.5625rem; border-width: 0.125rem; }
+  .pp-mb-gap { width: 0.9375rem; }
+  .pp-mb-gap.is-cut { width: 1.3125rem; }
+}

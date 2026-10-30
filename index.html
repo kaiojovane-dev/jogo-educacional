@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Patati Patatá — Vamos Aprender Brincando! Plataforma educacional infantil com cinco jogos de leitura e escrita, com áudio em português.">
+  <title>Patati Patatá — Vamos Aprender Brincando!</title>
+  
+  <!-- Estilos Oficiais do Sistema Visual -->
+  <link rel="stylesheet" href="style.css?v=20261030h">
+
+  <!-- Fundos das telas (carregados antes para a troca ser instantânea) -->
+  <link rel="preload" as="image" href="assets/images/fundos/jogos.jpg">
+  <link rel="preload" as="image" href="assets/images/fundos/conquistas.jpg">
+  <link rel="preload" as="image" href="assets/images/fundos/sobre.jpg">
+  <link rel="preload" as="image" href="assets/images/fundos/detetives.jpg">
+  <link rel="preload" as="image" href="assets/images/fundos/mebolo.jpg">
+  <link rel="preload" as="image" href="assets/images/fundos/construtores.jpg">
+  <link rel="preload" as="image" href="assets/images/fundos/aventura.jpg">
+  <link rel="preload" as="image" href="assets/images/fundos/missao.jpg">
+</head>
+<body data-page="inicio">
+
+  <!-- Cenário de Fundo das Telas Secundárias (imagem trocada por tela em css/base.css) -->
+  <div class="pp-scenery" aria-hidden="true"></div>
+
+  <!-- Raiz da Aplicação -->
+  <div class="pp-app-root">
+
+    <!-- CABEÇALHO OFICIAL (Navbar Flutuante no Topo) -->
+    <header class="pp-header">
+      <div class="pp-header__container">
+        
+        <!-- Logo Oficial Patati Patatá em Tipografia 3D Colorida -->
+        <a href="#inicio" class="pp-brand-logo" id="pp-nav-logo" title="Patati Patatá - Voltar ao Início" aria-label="Patati Patatá - Início">
+          <div class="pp-brand-badge">
+            <div class="pp-brand-row pp-brand-row--top">
+              <span class="pp-brand-char c-red">P</span>
+              <span class="pp-brand-char c-cyan">a</span>
+              <span class="pp-brand-char c-coral">t</span>
+              <span class="pp-brand-char c-yellow">a</span>
+              <span class="pp-brand-char c-green">t</span>
+              <span class="pp-brand-char c-blue pp-has-hat">
+                i
+                <svg class="pp-mini-hat" viewBox="0 0 24 16" width="18" height="12" aria-hidden="true">
+                  <ellipse cx="12" cy="13" rx="10" ry="3" fill="#0284c7"/>
+                  <path d="M5 12 C5 5, 8 2.5, 12 2.5 C16 2.5, 19 5, 19 12 Z" fill="#0084f7"/>
+                  <path d="M5 11 Q12 13, 19 11" stroke="#38bdf8" stroke-width="1.5" fill="none"/>
+                  <circle cx="12" cy="7" r="1.5" fill="#ffea55"/>
+                </svg>
+              </span>
+            </div>
+            <div class="pp-brand-row pp-brand-row--bottom">
+              <span class="pp-brand-char c-orange">p</span>
+              <span class="pp-brand-char c-lime">a</span>
+              <span class="pp-brand-char c-blue">t</span>
+              <span class="pp-brand-char c-amber">a</span>
+              <span class="pp-brand-char c-sky">t</span>
+              <span class="pp-brand-char c-pink">á</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Navegação Horizontal com Design Arredondado Infantil -->
+        <nav aria-label="Navegação Principal">
+          <ul class="pp-nav">
+            
+            <li class="pp-nav__item">
+              <button class="pp-nav__link active" data-view="inicio" id="nav-btn-inicio">
+                <span class="pp-nav-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                  </svg>
+                </span>
+                Início
+              </button>
+            </li>
+
+            <li class="pp-nav__item">
+              <button class="pp-nav__link" data-view="jogos" id="nav-btn-jogos">
+                <span class="pp-nav-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                  </svg>
+                </span>
+                Jogos
+              </button>
+            </li>
+
+            <li class="pp-nav__item">
+              <button class="pp-nav__link" data-view="conquistas" id="nav-btn-conquistas">
+                <span class="pp-nav-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                  </svg>
+                </span>
+                Conquistas
+              </button>
+            </li>
+
+            <li class="pp-nav__item">
+              <button class="pp-nav__link" data-view="sobre" id="nav-btn-sobre">
+                <span class="pp-nav-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                  </svg>
+                </span>
+                Sobre
+              </button>
+            </li>
+
+          </ul>
+        </nav>
+
+        <!-- Área de Saudação do Usuário à direita -->
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          
+          <!-- Chip com Avatar Infantil, Boas-vindas e Estrela Sorridente -->
+          <div class="pp-user-chip" id="user-profile-chip-global" title="Seu perfil de amiguinho!">
+            <div class="pp-user-chip__avatar">
+              <img src="assets/images/avatar/avatar_crianca.svg" alt="Avatar Infantil Amiguinho">
+            </div>
+            <div class="pp-user-chip__info">
+              <span class="pp-user-chip__greeting">Olá, amiguinho!</span>
+              <span class="pp-user-chip__sub">Vamos aprender?</span>
+            </div>
+            <img src="assets/images/avatar/estrela_sorridente.svg" alt="Estrela" class="pp-user-chip__star-img">
+          </div>
+
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ÁREA DE CONTEÚDO PRINCIPAL -->
+    <main class="pp-main-content">
+
+      <!-- ====================================================================
+           1. TELA INÍCIO — VÍDEO FULLSCREEN (100% DA TELA EM LOOP)
+           ==================================================================== -->
+      <section class="pp-view pp-view-home" id="view-inicio">
+        
+        <video 
+          id="home-bg-video" 
+          class="pp-fullscreen-video-bg" 
+          autoplay 
+          muted 
+          loop 
+          playsinline 
+        >
+          <source src="video1.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo HTML5.
+        </video>
+
+        <div class="pp-fullscreen-overlay">
+          <div class="pp-home-cta-bottom">
+            <button class="pp-home-cta-btn" id="btn-vamos-la" title="Clique para jogar com o Patati e o Patatá!">
+              <span class="pp-cta-play-badge">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </span>
+              Vamos lá!
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ====================================================================
+           2. TELA JOGOS — PRAÇA DA DIVERSÃO DO PATATI PATATÁ (FUNDO EM TELA CHEIA)
+           ==================================================================== -->
+      <section class="pp-view pp-view-games" id="view-jogos" style="display: none;">
+        
+        <!-- Fileira de Cartões (Mini Fliperamas de Madeira) Apoiada no Gramado -->
+        <div class="pp-games-dock">
+          <div class="pp-games-grid">
+          
+          <!-- Card 1: Detetives dos Sons (Ciano) -->
+          <article class="pp-game-card pp-game-card--cyan" data-game-target="1" id="card-game-1">
+            <div class="pp-game-card__illustration">
+              <img src="assets/extracted/illust_jogo1.png" alt="Detetives dos Sons">
+            </div>
+            <div class="pp-game-card__badge">Detetives dos Sons</div>
+            <div class="pp-game-card__info">
+              <span class="pp-game-card__label">Dificuldade Trabalhada:</span>
+              <span class="pp-game-card__value">P/B, T/D, F/V, CH/X.</span>
+              <span class="pp-game-card__label" style="margin-top: 6px;">Principal Habilidade:</span>
+              <span class="pp-game-card__value">Discriminação fonêmica e correspondência som-letra.</span>
+            </div>
+            <button class="pp-game-card__btn" aria-label="Abrir jogo Detetives dos Sons">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+              </svg>
+            </button>
+          </article>
+
+          <!-- Card 2: O Gato Mebolo (Verde) -->
+          <article class="pp-game-card pp-game-card--green" data-game-target="2" id="card-game-2">
+            <div class="pp-game-card__illustration">
+              <img src="assets/extracted/illust_jogo2.png" alt="O Gato Mebolo">
+            </div>
+            <div class="pp-game-card__badge">O Gato Mebolo</div>
+            <div class="pp-game-card__info">
+              <span class="pp-game-card__label">Dificuldade Trabalhada:</span>
+              <span class="pp-game-card__value">Aglutinação e segmentação.</span>
+              <span class="pp-game-card__label" style="margin-top: 6px;">Principal Habilidade:</span>
+              <span class="pp-game-card__value">Consciência lexical e segmentação de frases.</span>
+            </div>
+            <button class="pp-game-card__btn" aria-label="Abrir jogo O Gato Mebolo">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+              </svg>
+            </button>
+          </article>
+
+          <!-- Card 3: Construtores de Palavras (Amarelo / Laranja) -->
+          <article class="pp-game-card pp-game-card--yellow" data-game-target="3" id="card-game-3">
+            <div class="pp-game-card__illustration">
+              <img src="assets/extracted/illust_jogo3.png" alt="Construtores de Palavras">
+            </div>
+            <div class="pp-game-card__badge">Construtores de Palavras</div>
+            <div class="pp-game-card__info">
+              <span class="pp-game-card__label">Dificuldade Trabalhada:</span>
+              <span class="pp-game-card__value">Omissões e inversões.</span>
+              <span class="pp-game-card__label" style="margin-top: 6px;">Principal Habilidade:</span>
+              <span class="pp-game-card__value">Ordem dos fonemas e sílabas.</span>
+            </div>
+            <button class="pp-game-card__btn" aria-label="Abrir jogo Construtores de Palavras">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+              </svg>
+            </button>
+          </article>
+
+          <!-- Card 4: Aventura do Re G (Roxo) -->
+          <article class="pp-game-card pp-game-card--purple" data-game-target="4" id="card-game-4">
+            <div class="pp-game-card__illustration">
+              <img src="assets/extracted/illust_jogo4.png" alt="Aventura do Re G">
+            </div>
+            <div class="pp-game-card__badge">Aventura do Re G</div>
+            <div class="pp-game-card__info">
+              <span class="pp-game-card__label">Dificuldade Trabalhada:</span>
+              <span class="pp-game-card__value">Regras contextuais.</span>
+              <span class="pp-game-card__label" style="margin-top: 6px;">Principal Habilidade:</span>
+              <span class="pp-game-card__value">Ortografia contextual.</span>
+            </div>
+            <button class="pp-game-card__btn" aria-label="Abrir jogo Aventura do Re G">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+              </svg>
+            </button>
+          </article>
+
+          <!-- Card 5: Missão Palavra Mágica (Rosa) -->
+          <article class="pp-game-card pp-game-card--pink" data-game-target="5" id="card-game-5">
+            <div class="pp-game-card__illustration">
+              <img src="assets/extracted/illust_jogo5.png" alt="Missão Palavra Mágica">
+            </div>
+            <div class="pp-game-card__badge">Missão Palavra Mágica</div>
+            <div class="pp-game-card__info">
+              <span class="pp-game-card__label">Dificuldade Trabalhada:</span>
+              <span class="pp-game-card__value">Consciência fonológica.</span>
+              <span class="pp-game-card__label" style="margin-top: 6px;">Principal Habilidade:</span>
+              <span class="pp-game-card__value">Integração das habilidades anteriores.</span>
+            </div>
+            <button class="pp-game-card__btn" aria-label="Abrir jogo Missão Palavra Mágica">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+              </svg>
+            </button>
+          </article>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           3. JOGO 1: DETETIVES DOS SONS — FIEL À tela3.png (10 RODADAS)
+           ==================================================================== -->
+      <section class="pp-view pp-game-view" id="view-game-detetives" style="display: none;">
+        
+        <!-- Cabeçalho do Jogo: Voltar, Título e Instrução com Alto-falante -->
+        <header class="pp-game-header">
+          <button class="pp-game-btn-back" id="btn-detetives-back-to-games" title="Voltar aos Jogos" aria-label="Voltar aos Jogos">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+          </button>
+
+          <div class="pp-game-header__title">
+            <span class="pp-game-header__icon" aria-hidden="true">🔍</span>
+            <div class="pp-game-header__text">
+              <h1 class="pp-game-logo" aria-label="Detetives dos Sons">
+                <span class="pp-game-logo__small">Detetives dos</span>
+                <span class="pp-game-logo__big" aria-hidden="true"><span>S</span><span>O</span><span>N</span><span>S</span></span>
+              </h1>
+              <p class="pp-game-header__hint">Preste atenção e marque a palavra escrita corretamente!</p>
+            </div>
+          </div>
+
+          <button class="pp-game-btn-speaker" id="btn-detetives-instruction-audio" title="Ouvir instrução" aria-label="Ouvir instrução">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+          </button>
+        </header>
+
+        <!-- Painel Nuvem Central do Desafio (Fiel à tela3.png) -->
+        <div class="pp-detetive-cloud-card">
+          
+          <!-- ESTÁGIO DA ATIVIDADE EM ANDAMENTO -->
+          <div id="detetives-game-stage" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            
+            <!-- Tags Fonéticas Superiores (Ex: SS + Som Vermelho + Joinha) -->
+            <div class="pp-detetive-tags-row">
+              <span class="pp-phoneme-pill" id="detetives-phoneme-tag">Pista: SS</span>
+              <button class="pp-mini-audio-btn" id="btn-detetives-phoneme-sound" title="Ouvir o som do fonema">🔊</button>
+              <span class="pp-mini-like-badge" title="Muito bem!">👍</span>
+            </div>
+
+            <!-- Área da Figura Central (Vassoura, Borboleta, etc.) -->
+            <div class="pp-detetive-figure-box" id="detetives-figure-content" title="Clique para ouvir a palavra!"></div>
+
+            <!-- Botão Dedicado: Ouvir Novamente -->
+            <button class="pp-btn-listen-again" id="btn-detetives-listen-again" title="Ouvir a pronúncia novamente">
+              <span class="pp-listen-icon">🔊</span>
+              <span>Ouvir novamente</span>
+            </button>
+
+            <!-- Pergunta Principal e Subtítulo -->
+            <h2 class="pp-detetive-question-title" id="detetives-question-text">Qual palavra está escrita corretamente?</h2>
+            <p class="pp-detetive-question-sub" id="detetives-sub-text">Observe a figura e escolha a palavra certa!</p>
+
+            <!-- Grade com as 4 Alternativas de Resposta -->
+            <div class="pp-detetive-options-grid" id="detetives-options-grid"></div>
+
+            <!-- Barra de Status (Contador, Barra de Progresso, Pontos e Estrelas) -->
+            <div class="pp-detetive-status-bar">
+              <span class="pp-round-counter" id="detetives-round-counter">Pista 1 de 10</span>
+              <div class="pp-detetive-progress-wrapper" title="Progresso da Investigação">
+                <div class="pp-detetive-progress-fill" id="detetives-progress-fill" style="width: 0%;"></div>
+              </div>
+              <span class="pp-score-badge" id="detetives-score-badge">0 Pontos</span>
+              <div class="pp-stars-badge" id="detetives-stars-box"></div>
+            </div>
+
+          </div>
+
+          <!-- TELA DE RESULTADO FINAL (Apresentada após as 10 rodadas) -->
+          <div id="detetives-game-result" class="pp-detetive-result-card" style="display: none;">
+            <div id="detetives-confetti-container" class="pp-modal__confetti-box"></div>
+            <div class="pp-character-badge" style="width: 90px; height: 90px; margin: -50px auto 0.5rem; border: 4px solid #ffea55; background: #fff;">
+              <img src="assets/extracted/patati_avatar_helper.png" alt="Patati Detetive">
+            </div>
+            <h2 class="pp-font-bubbly" style="color: #0f3d79; font-size: 2.2rem; margin-bottom: 0.25rem;">
+              🎉 Missão Cumprida, Detetive!
+            </h2>
+            
+            <div class="pp-result-summary-grid">
+              <div class="pp-result-stat-box">
+                <span class="pp-stat-label">Pontuação</span>
+                <span class="pp-stat-value" id="detetives-final-score">100 Pontos</span>
+              </div>
+              <div class="pp-result-stat-box">
+                <span class="pp-stat-label">Acertos</span>
+                <span class="pp-stat-value" id="detetives-final-hits">10 de 10 atividades</span>
+              </div>
+            </div>
+
+            <p id="detetives-final-desc" style="color: #334155; font-size: 1.15rem; font-weight: 700; max-width: 480px; margin: 0.5rem auto 1.25rem;"></p>
+            
+            <div class="pp-stars-badge" id="detetives-final-stars" style="font-size: 2.8rem; padding: 0.5rem 1.6rem; margin-bottom: 1.75rem;"></div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; position: relative; z-index: 10;">
+              <button class="pp-btn pp-btn--yellow-cta" id="btn-detetives-retry" style="font-size: 1.2rem; padding: 0.75rem 2rem;">
+                ↺ Jogar Novamente
+              </button>
+              <button class="pp-btn pp-btn--blue" id="btn-detetives-return" style="font-size: 1.2rem; padding: 0.75rem 2rem;">
+                Voltar aos Jogos ➔
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ====================================================================
+           4. JOGOS 2 A 5 (moldura e atividades montadas por js/gameBase.js)
+           ==================================================================== -->
+      <section class="pp-view pp-game-view" id="view-game-mebolo" style="display: none;" aria-label="Jogo O Gato Mebolo"></section>
+      <section class="pp-view pp-game-view" id="view-game-construtores" style="display: none;" aria-label="Jogo Construtores de Palavras"></section>
+      <section class="pp-view pp-game-view" id="view-game-aventura" style="display: none;" aria-label="Jogo Aventura do Re G"></section>
+      <section class="pp-view pp-game-view" id="view-game-missao" style="display: none;" aria-label="Jogo Missão Palavra Mágica"></section>
+
+
+      <!-- ====================================================================
+           5. TELA CONQUISTAS (dados reais do localStorage via js/pages/conquistas.js)
+           ==================================================================== -->
+      <section class="pp-view pp-page" id="view-conquistas" style="display: none;">
+        <div class="pp-page-wrap" id="conquistas-content">
+
+          <header class="pp-panel-cloud pp-cq-hero">
+            <div class="pp-cq-avatar">
+              <img src="assets/images/avatar/avatar_crianca.svg" alt="Avatar do jogador">
+              <img src="assets/images/avatar/estrela_sorridente.svg" alt="" class="pp-cq-avatar__star">
+            </div>
+            <div class="pp-cq-hero__text">
+              <h1 class="pp-page-title">Minhas Conquistas</h1>
+              <p class="pp-cq-motivation" id="cq-motivation">Escolha um jogo e comece a sua coleção de estrelas!</p>
+              <div class="pp-cq-progress">
+                <div class="pp-cq-progress__head">
+                  <span>Progresso geral</span>
+                  <strong id="cq-percent">0%</strong>
+                </div>
+                <div class="pp-cq-progress__bar" id="cq-progress" role="progressbar" aria-label="Progresso geral" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                  <div class="pp-cq-progress__fill" id="cq-progress-fill"></div>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <div class="pp-cq-stats">
+            <div class="pp-cq-stat pp-cq-stat--yellow">
+              <span class="pp-cq-stat__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></span>
+              <span class="pp-cq-stat__value" id="cq-stars">0 / 15</span>
+              <span class="pp-cq-stat__label">Total de estrelas</span>
+            </div>
+            <div class="pp-cq-stat pp-cq-stat--green">
+              <span class="pp-cq-stat__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.670 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></span>
+              <span class="pp-cq-stat__value" id="cq-games">0 / 5</span>
+              <span class="pp-cq-stat__label">Jogos concluídos</span>
+            </div>
+            <div class="pp-cq-stat pp-cq-stat--blue">
+              <span class="pp-cq-stat__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+              <span class="pp-cq-stat__value" id="cq-activities">0</span>
+              <span class="pp-cq-stat__label">Atividades respondidas</span>
+            </div>
+            <div class="pp-cq-stat pp-cq-stat--pink">
+              <span class="pp-cq-stat__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg></span>
+              <span class="pp-cq-stat__value" id="cq-streak">0</span>
+              <span class="pp-cq-stat__label">Melhor sequência de acertos</span>
+            </div>
+          </div>
+
+          <section class="pp-panel-cloud pp-cq-section" aria-labelledby="cq-medals-title">
+            <h2 class="pp-section-title" id="cq-medals-title">Medalhas <span class="pp-section-count" id="cq-medals">0 / 5</span></h2>
+            <ul class="pp-cq-medals" id="cq-medal-list"></ul>
+          </section>
+
+          <section class="pp-panel-cloud pp-cq-section" aria-labelledby="cq-games-title">
+            <h2 class="pp-section-title" id="cq-games-title">Meus jogos</h2>
+            <div class="pp-cq-games" id="cq-game-list"></div>
+          </section>
+
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           6. TELA SOBRE
+           ==================================================================== -->
+      <section class="pp-view pp-page" id="view-sobre" style="display: none;">
+        <div class="pp-page-wrap">
+
+          <header class="pp-panel-cloud pp-about-hero">
+            <div class="pp-about-hero__text">
+              <h1 class="pp-page-title">Aprender brincando é muito mais divertido!</h1>
+              <p>
+                <strong>Patati Patatá — Vamos Aprender Brincando!</strong> é uma plataforma de jogos educativos para crianças em fase de alfabetização.
+                Com personagens amigos, áudio em português e desafios curtos, a criança treina a leitura e a escrita enquanto se diverte.
+              </p>
+              <button class="pp-btn pp-btn--yellow-cta" type="button" data-view="jogos">Conhecer os jogos</button>
+            </div>
+            <div class="pp-about-hero__art" aria-hidden="true">
+              <img src="assets/extracted/patati_home.png" alt="">
+              <img src="assets/extracted/patata_home.png" alt="">
+            </div>
+          </header>
+
+          <section class="pp-panel-cloud pp-about-section" aria-labelledby="sobre-objetivo">
+            <h2 class="pp-section-title" id="sobre-objetivo">Nosso objetivo</h2>
+            <p class="pp-about-lead">
+              Apoiar o desenvolvimento da consciência fonológica, da consciência lexical e da ortografia, ajudando a criança a perceber
+              os sons da fala, separar as palavras, montar palavras na ordem certa e escolher a escrita correta.
+            </p>
+            <div class="pp-about-goals">
+              <div class="pp-about-goal pp-about-goal--blue">
+                <h3>Ouvir com atenção</h3>
+                <p>Diferenciar sons parecidos e relacionar cada som à sua letra.</p>
+              </div>
+              <div class="pp-about-goal pp-about-goal--green">
+                <h3>Separar e organizar</h3>
+                <p>Perceber onde cada palavra começa e termina dentro da frase.</p>
+              </div>
+              <div class="pp-about-goal pp-about-goal--orange">
+                <h3>Construir palavras</h3>
+                <p>Montar letras e sílabas na ordem certa, sem esquecer nem trocar nenhuma.</p>
+              </div>
+              <div class="pp-about-goal pp-about-goal--purple">
+                <h3>Escrever certinho</h3>
+                <p>Aprender regras como R e RR, G e GU, C e QU em palavras do dia a dia.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="pp-panel-cloud pp-about-section" aria-labelledby="sobre-personagens">
+            <h2 class="pp-section-title" id="sobre-personagens">Os personagens</h2>
+            <div class="pp-about-characters">
+              <article class="pp-about-character pp-about-character--blue">
+                <div class="pp-about-character__art"><img src="assets/extracted/patati_home.png" alt="Patati"></div>
+                <h3>Patati</h3>
+                <p>Curioso e animado, vira detetive, ajudante da oficina e explorador para acompanhar a criança nos desafios.</p>
+              </article>
+              <article class="pp-about-character pp-about-character--green">
+                <div class="pp-about-character__art"><img src="assets/extracted/patata_home.png" alt="Patatá"></div>
+                <h3>Patatá</h3>
+                <p>Alegre e brincalhão, é o parceiro inseparável do Patati e recebe a criança na praça da diversão.</p>
+              </article>
+              <article class="pp-about-character pp-about-character--orange">
+                <div class="pp-about-character__art pp-about-character__art--contain"><img src="assets/images/mebolo/mebolo.svg" alt="Gato Mebolo"></div>
+                <h3>Gato Mebolo</h3>
+                <p>Um gatinho divertido que às vezes gruda as palavras e precisa de ajuda para separá-las e organizá-las.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="pp-panel-cloud pp-about-section" aria-labelledby="sobre-jogos">
+            <h2 class="pp-section-title" id="sobre-jogos">Os cinco jogos</h2>
+            <div class="pp-about-games">
+              <article class="pp-about-game" style="--cq-color: #25A9E8;">
+                <img src="assets/extracted/illust_jogo1.png" alt="">
+                <div>
+                  <h3>Detetives dos Sons</h3>
+                  <p>Ouça a palavra, observe a figura e descubra qual escrita está correta.</p>
+                  <span class="pp-skill-chip">Discriminação de sons</span>
+                </div>
+                <button class="pp-btn pp-btn--blue" type="button" data-open-game="detetives">Jogar</button>
+              </article>
+              <article class="pp-about-game" style="--cq-color: #54C96B;">
+                <img src="assets/extracted/illust_jogo2.png" alt="">
+                <div>
+                  <h3>O Gato Mebolo</h3>
+                  <p>Organize frases, separe palavras grudadas e encontre os erros do Mebolo.</p>
+                  <span class="pp-skill-chip">Consciência lexical</span>
+                </div>
+                <button class="pp-btn pp-btn--blue" type="button" data-open-game="mebolo">Jogar</button>
+              </article>
+              <article class="pp-about-game" style="--cq-color: #FF9838;">
+                <img src="assets/extracted/illust_jogo3.png" alt="">
+                <div>
+                  <h3>Construtores de Palavras</h3>
+                  <p>Veja a figura, ouça o nome e monte a palavra com os blocos de letras.</p>
+                  <span class="pp-skill-chip">Ordem das letras e sílabas</span>
+                </div>
+                <button class="pp-btn pp-btn--blue" type="button" data-open-game="construtores">Jogar</button>
+              </article>
+              <article class="pp-about-game" style="--cq-color: #9364E8;">
+                <img src="assets/extracted/illust_jogo4.png" alt="">
+                <div>
+                  <h3>Aventura do Re G</h3>
+                  <p>Siga a trilha da floresta completando as placas com R ou RR, G ou GU, C ou QU.</p>
+                  <span class="pp-skill-chip">Ortografia contextual</span>
+                </div>
+                <button class="pp-btn pp-btn--blue" type="button" data-open-game="aventura">Jogar</button>
+              </article>
+              <article class="pp-about-game" style="--cq-color: #F05B9B;">
+                <img src="assets/extracted/illust_jogo5.png" alt="">
+                <div>
+                  <h3>Missão Palavra Mágica</h3>
+                  <p>Abra o livro mágico e use tudo o que aprendeu para acender as estrelas.</p>
+                  <span class="pp-skill-chip">Integração das habilidades</span>
+                </div>
+                <button class="pp-btn pp-btn--blue" type="button" data-open-game="missao">Jogar</button>
+              </article>
+            </div>
+          </section>
+
+          <section class="pp-panel-cloud pp-about-section" aria-labelledby="sobre-habilidades">
+            <h2 class="pp-section-title" id="sobre-habilidades">Habilidades trabalhadas</h2>
+            <ul class="pp-about-skills">
+              <li>Discriminação fonêmica (P/B, T/D, F/V, CH/X)</li>
+              <li>Correspondência entre som e letra</li>
+              <li>Segmentação de frases em palavras</li>
+              <li>Identificação de palavras aglutinadas</li>
+              <li>Ordem dos fonemas e das sílabas</li>
+              <li>Atenção a omissões e inversões de letras</li>
+              <li>Regras de R e RR, G e GU, C e QU</li>
+              <li>Reconhecimento da escrita correta</li>
+            </ul>
+          </section>
+
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Scripts JavaScript Puro (ordem: núcleo → jogos → páginas → navegação) -->
+  <script src="js/progress.js?v=20261030h"></script>
+  <script src="js/audio.js?v=20261030h"></script>
+  <script src="js/components.js?v=20261030h"></script>
+  <script src="js/gameBase.js?v=20261030h"></script>
+  <script src="js/games/detetivesSons.js?v=20261030h"></script>
+  <script src="js/games/gatoMebolo.js?v=20261030h"></script>
+  <script src="js/games/construtoresPalavras.js?v=20261030h"></script>
+  <script src="js/games/aventuraReG.js?v=20261030h"></script>
+  <script src="js/games/missaoPalavraMagica.js?v=20261030h"></script>
+  <script src="js/pages/conquistas.js?v=20261030h"></script>
+  <script src="js/app.js?v=20261030h"></script>
+</body>
+</html>

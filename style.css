@@ -1,0 +1,197 @@
+/* ==========================================================================
+   PATATI PATATÁ — VAMOS APRENDER BRINCANDO!
+   SISTEMA VISUAL OFICIAL (Design System Unificado)
+   Tecnologias: HTML5, CSS3, JavaScript Vanilla
+   ========================================================================== */
+
+@import url('css/variables.css?v=20261030h');
+@import url('css/base.css?v=20261030h');
+@import url('css/components.css?v=20261030h');
+@import url('css/games.css?v=20261030h');
+@import url('css/animations.css?v=20261030h');
+@import url('css/platform.css?v=20261030h');
+@import url('css/game-shell.css?v=20261030h');
+@import url('css/game-mebolo.css?v=20261030h');
+@import url('css/game-construtores.css?v=20261030h');
+@import url('css/game-aventura.css?v=20261030h');
+@import url('css/game-missao.css?v=20261030h');
+@import url('css/pages.css?v=20261030h');
+
+/* ==========================================================================
+   TELA INÍCIO: VÍDEO PREENCHENDO 100% DA TELA EM TELA CHEIA (FULLSCREEN)
+   ========================================================================== */
+
+/* Navbar Fixa Flutuante no Topo */
+.pp-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 65rem;
+  margin: 0.75rem auto 0;
+  padding: 0 1rem;
+  z-index: 100;
+}
+
+/* Espaçamento do conteúdo para não ficar sob o header fixo */
+.pp-main-content {
+  padding-top: calc(var(--pp-header-offset, 5.5rem) + 0.75rem);
+  min-height: 100vh;
+}
+
+/* Vista Início: Ocupa 100% da viewport (Full Screen Edge-to-Edge) */
+.pp-view-home {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  /* Céu e gramado nas cores das bordas do vídeo (aparecem em telas em pé) */
+  background: linear-gradient(180deg, #41c7fd 0%, #4bcbfd 45%, #55b624 55%, #4ca82a 100%);
+}
+
+/* O Vídeo Preenche Toda a Tela Sem Borda Nem Margem */
+.pp-fullscreen-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Telas em pé (celular, tablet vertical): o recorte "cover" cortaria o título
+   gravado no vídeo. O vídeo fica numa faixa central que mostra o título
+   inteiro e se funde ao céu e ao gramado acima e abaixo. */
+@media (max-aspect-ratio: 3/4) {
+  .pp-fullscreen-video-bg {
+    inset: auto 0;
+    top: 50%;
+    height: 133.33vw;
+    transform: translateY(-50%);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  }
+}
+
+/* Camada Interativa Sobreposta ao Vídeo Fullscreen */
+.pp-fullscreen-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem 2rem 3rem;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, transparent 20%, transparent 70%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+/* Caixa Inferior com o Botão Principal "Vamos lá!" */
+.pp-home-cta-bottom {
+  pointer-events: auto;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Botão "Vamos lá!" com Visual de Brinquedo 3D */
+.pp-home-cta-btn {
+  background: linear-gradient(180deg, #ffea55 0%, #fdbb2d 55%, #f59e0b 100%);
+  color: #14325a;
+  font-family: var(--pp-font-display);
+  font-size: 1.85rem;
+  font-weight: 800;
+  padding: 0.95rem 3.4rem 0.95rem 1.85rem;
+  border-radius: var(--pp-radius-pill);
+  border: 0.2812rem solid #ffffff;
+  box-shadow: 0 0.5rem 0 #b45309, 0 1.25rem 2.1875rem rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: transform var(--pp-transition-bounce), box-shadow var(--pp-transition-fast);
+  text-decoration: none;
+  user-select: none;
+  animation: pp-cta-pulse 2.2s ease-in-out infinite;
+  text-shadow: 0 0.0625rem 0 rgba(255, 255, 255, 0.6);
+}
+
+.pp-home-cta-btn .pp-cta-play-badge {
+  width: 3.5rem;
+  height: 3.5rem;
+  min-width: 3.5rem;
+  border-radius: 50%;
+  background: #ff2a5f;
+  border: 0.1875rem solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.25);
+}
+
+.pp-home-cta-btn:hover {
+  transform: translateY(-0.25rem) scale(1.05);
+  background: linear-gradient(180deg, #fff176 0%, #fec63d 55%, #f59e0b 100%);
+  box-shadow: 0 0.75rem 0 #b45309, 0 1.5625rem 2.5rem rgba(0, 0, 0, 0.4);
+}
+
+.pp-home-cta-btn:active {
+  transform: translateY(0.25rem);
+  box-shadow: 0 0.1875rem 0 #b45309, 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+  .pp-header {
+    margin-top: 0.25rem;
+  }
+  .pp-fullscreen-overlay {
+    padding: 7rem 1rem 2.5rem;
+  }
+  .pp-home-cta-btn {
+    font-size: 1.4rem;
+    padding: 0.75rem 2.2rem 0.75rem 1.4rem;
+  }
+  .pp-home-cta-btn .pp-cta-play-badge {
+    width: 2.75rem;
+    height: 2.75rem;
+    min-width: 2.75rem;
+  }
+}
+
+/* Telas baixas e largas (celular deitado): o vídeo aparece inteiro, sem
+   cortar o título, e o botão fica menor rente ao rodapé */
+@media (max-height: 520px) and (min-aspect-ratio: 3/2) {
+  .pp-fullscreen-video-bg {
+    object-fit: contain;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
+  }
+  .pp-fullscreen-overlay {
+    padding: 0 1rem 0.75rem;
+  }
+  .pp-home-cta-btn {
+    font-size: 1.15rem;
+    padding: 0.45rem 1.6rem 0.45rem 0.7rem;
+    gap: 0.75rem;
+    box-shadow: 0 0.3125rem 0 #b45309, 0 0.75rem 1.25rem rgba(0, 0, 0, 0.3);
+  }
+  .pp-home-cta-btn .pp-cta-play-badge {
+    width: 2.1rem;
+    height: 2.1rem;
+    min-width: 2.1rem;
+  }
+}

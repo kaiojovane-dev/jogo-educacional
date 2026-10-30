@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <radialGradient id="solFace" cx="40%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#fff3a6"/>
+      <stop offset="55%" stop-color="#ffd43b"/>
+      <stop offset="100%" stop-color="#ff9838"/>
+    </radialGradient>
+    <filter id="solShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#b45309" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <g filter="url(#solShadow)">
+    <g fill="#ffb627" stroke="#f08a1c" stroke-width="2" stroke-linejoin="round">
+      <path d="M100 8 L112 38 L88 38 Z"/>
+      <path d="M100 192 L88 162 L112 162 Z"/>
+      <path d="M8 100 L38 88 L38 112 Z"/>
+      <path d="M192 100 L162 112 L162 88 Z"/>
+      <path d="M35 35 L64 48 L48 64 Z"/>
+      <path d="M165 35 L152 64 L136 48 Z"/>
+      <path d="M35 165 L48 136 L64 152 Z"/>
+      <path d="M165 165 L136 152 L152 136 Z"/>
+    </g>
+    <circle cx="100" cy="100" r="56" fill="url(#solFace)" stroke="#f08a1c" stroke-width="2.5"/>
+    <ellipse cx="82" cy="92" rx="7" ry="9" fill="#4a2a0a"/>
+    <ellipse cx="118" cy="92" rx="7" ry="9" fill="#4a2a0a"/>
+    <circle cx="80" cy="89" r="2.6" fill="#fff"/>
+    <circle cx="116" cy="89" r="2.6" fill="#fff"/>
+    <ellipse cx="70" cy="112" rx="9" ry="6" fill="#ff7aa8" opacity="0.55"/>
+    <ellipse cx="130" cy="112" rx="9" ry="6" fill="#ff7aa8" opacity="0.55"/>
+    <path d="M84 116 Q100 132 116 116" stroke="#4a2a0a" stroke-width="4" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>

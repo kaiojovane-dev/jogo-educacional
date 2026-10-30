@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax slice">
+  <!-- Fundo da tela Conquistas: céu dourado de vitória com estrelas, confete e troféus -->
+  <defs>
+    <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5ec8fb"/>
+      <stop offset=".55" stop-color="#bfe8ff"/>
+      <stop offset="1" stop-color="#fff0bf"/>
+    </linearGradient>
+    <linearGradient id="ouro" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff08a"/>
+      <stop offset=".55" stop-color="#ffd43b"/>
+      <stop offset="1" stop-color="#e8a500"/>
+    </linearGradient>
+    <linearGradient id="morro" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8ee07c"/>
+      <stop offset="1" stop-color="#46b558"/>
+    </linearGradient>
+    <path id="raio" d="M0 0 L-80 -1400 L80 -1400 Z" fill="#ffffff"/>
+    <symbol id="estrela" viewBox="-22 -22 44 44">
+      <path d="M0 -20 L5.9 -8.1 L19 -6.2 L9.5 3.1 L11.8 16.2 L0 10 L-11.8 16.2 L-9.5 3.1 L-19 -6.2 L-5.9 -8.1 Z" fill="#ffd43b" stroke="#f2a900" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="-4.5" cy="-1" r="1.8" fill="#5a3a12"/>
+      <circle cx="4.5" cy="-1" r="1.8" fill="#5a3a12"/>
+      <path d="M-3.5 3.5 Q0 7 3.5 3.5" stroke="#5a3a12" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="brilho" viewBox="-10 -10 20 20">
+      <path d="M0 -10 Q1.5 -1.5 10 0 Q1.5 1.5 0 10 Q-1.5 1.5 -10 0 Q-1.5 -1.5 0 -10 Z" fill="#ffffff"/>
+    </symbol>
+    <symbol id="nuvem" viewBox="0 0 200 90">
+      <g fill="#fff">
+        <ellipse cx="100" cy="64" rx="96" ry="24"/>
+        <circle cx="68" cy="50" r="32"/>
+        <circle cx="116" cy="38" r="40"/>
+        <circle cx="160" cy="56" r="24"/>
+      </g>
+    </symbol>
+  </defs>
+
+  <style>
+    .raios { transform-box: view-box; transform-origin: 800px 1000px; animation: balanca 18s ease-in-out infinite; }
+    .flutua { animation: flutua 5s ease-in-out infinite; }
+    .flutua2 { animation: flutua 6.5s ease-in-out infinite -2.5s; }
+    .pisca { transform-box: fill-box; transform-origin: center; animation: pisca 2.4s ease-in-out infinite; }
+    .pisca2 { transform-box: fill-box; transform-origin: center; animation: pisca 2.4s ease-in-out infinite -1.2s; }
+    @keyframes balanca { 50% { transform: rotate(6deg); } }
+    @keyframes flutua { 50% { transform: translateY(-16px); } }
+    @keyframes pisca { 50% { opacity: .25; transform: scale(.6); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+
+  <rect width="1600" height="1000" fill="url(#ceu)"/>
+
+  <!-- Raios de luz saindo do pódio -->
+  <g class="raios" opacity=".22">
+    <g transform="translate(800 1000)">
+      <use href="#raio" xlink:href="#raio" transform="rotate(-80)"/>
+      <use href="#raio" xlink:href="#raio" transform="rotate(-60)"/>
+      <use href="#raio" xlink:href="#raio" transform="rotate(-40)"/>
+      <use href="#raio" xlink:href="#raio" transform="rotate(-20)"/>
+      <use href="#raio" xlink:href="#raio"/>
+      <use href="#raio" xlink:href="#raio" transform="rotate(20)"/>
+      <use href="#raio" xlink:href="#raio" transform="rotate(40)"/>
+      <use href="#raio" xlink:href="#raio" transform="rotate(60)"/>
+      <use href="#raio" xlink:href="#raio" transform="rotate(80)"/>
+    </g>
+  </g>
+
+  <!-- Nuvens -->
+  <use href="#nuvem" xlink:href="#nuvem" x="40" y="150" width="220" height="99" opacity=".9" class="flutua2"/>
+  <use href="#nuvem" xlink:href="#nuvem" x="1330" y="130" width="240" height="108" class="flutua"/>
+  <use href="#nuvem" xlink:href="#nuvem" x="620" y="110" width="180" height="81" opacity=".75" class="flutua2"/>
+
+  <!-- Confete -->
+  <g>
+    <rect x="200" y="320" width="16" height="9" rx="2" fill="#ff4d6d" transform="rotate(25 208 324)"/>
+    <rect x="330" y="230" width="16" height="9" rx="2" fill="#25a9e8" transform="rotate(-35 338 234)"/>
+    <rect x="460" y="390" width="16" height="9" rx="2" fill="#54c96b" transform="rotate(50 468 394)"/>
+    <rect x="560" y="260" width="16" height="9" rx="2" fill="#9364e8" transform="rotate(-15 568 264)"/>
+    <rect x="1040" y="250" width="16" height="9" rx="2" fill="#ff9838" transform="rotate(40 1048 254)"/>
+    <rect x="1160" y="380" width="16" height="9" rx="2" fill="#f05b9b" transform="rotate(-50 1168 384)"/>
+    <rect x="1280" y="290" width="16" height="9" rx="2" fill="#25a9e8" transform="rotate(20 1288 294)"/>
+    <rect x="1420" y="420" width="16" height="9" rx="2" fill="#54c96b" transform="rotate(-25 1428 424)"/>
+    <rect x="120" y="520" width="16" height="9" rx="2" fill="#ffd43b" transform="rotate(60 128 524)"/>
+    <rect x="1500" y="560" width="16" height="9" rx="2" fill="#ff4d6d" transform="rotate(-60 1508 564)"/>
+    <circle cx="270" cy="440" r="6" fill="#f05b9b"/>
+    <circle cx="410" cy="170" r="6" fill="#ffd43b"/>
+    <circle cx="1220" cy="190" r="6" fill="#9364e8"/>
+    <circle cx="1350" cy="500" r="6" fill="#ff9838"/>
+    <circle cx="80" cy="380" r="6" fill="#25a9e8"/>
+    <circle cx="1560" cy="330" r="6" fill="#54c96b"/>
+  </g>
+
+  <!-- Estrelas sorridentes -->
+  <use href="#estrela" xlink:href="#estrela" x="110" y="240" width="90" height="90" class="flutua"/>
+  <use href="#estrela" xlink:href="#estrela" x="360" y="300" width="60" height="60" class="flutua2"/>
+  <use href="#estrela" xlink:href="#estrela" x="1180" y="260" width="70" height="70" class="flutua"/>
+  <use href="#estrela" xlink:href="#estrela" x="1440" y="300" width="96" height="96" class="flutua2"/>
+  <use href="#estrela" xlink:href="#estrela" x="760" y="200" width="56" height="56" class="flutua"/>
+
+  <!-- Brilhos -->
+  <use href="#brilho" xlink:href="#brilho" x="240" y="180" width="28" height="28" class="pisca"/>
+  <use href="#brilho" xlink:href="#brilho" x="520" y="340" width="22" height="22" class="pisca2"/>
+  <use href="#brilho" xlink:href="#brilho" x="980" y="160" width="26" height="26" class="pisca"/>
+  <use href="#brilho" xlink:href="#brilho" x="1320" y="420" width="24" height="24" class="pisca2"/>
+  <use href="#brilho" xlink:href="#brilho" x="1520" y="220" width="22" height="22" class="pisca"/>
+  <use href="#brilho" xlink:href="#brilho" x="60" y="460" width="24" height="24" class="pisca2"/>
+
+  <!-- Morros -->
+  <path d="M0 740 Q320 650 700 730 T1600 700 V1000 H0 Z" fill="url(#morro)" opacity=".8"/>
+  <path d="M0 830 Q420 760 820 820 T1600 800 V1000 H0 Z" fill="#46b558"/>
+
+  <!-- Pódio central -->
+  <g>
+    <rect x="590" y="790" width="140" height="120" rx="10" fill="#bfc9d6"/>
+    <rect x="730" y="740" width="140" height="170" rx="10" fill="url(#ouro)"/>
+    <rect x="870" y="820" width="140" height="90" rx="10" fill="#e8a46b"/>
+    <text x="660" y="870" text-anchor="middle" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-weight="900" font-size="56" fill="#ffffff">2</text>
+    <text x="800" y="840" text-anchor="middle" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-weight="900" font-size="64" fill="#ffffff">1</text>
+    <text x="940" y="885" text-anchor="middle" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-weight="900" font-size="50" fill="#ffffff">3</text>
+  </g>
+
+  <!-- Troféu à esquerda -->
+  <g transform="translate(190 700)">
+    <path d="M-52 0 Q-90 0 -86 34 Q-80 66 -36 70" stroke="#e8a500" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M52 0 Q90 0 86 34 Q80 66 36 70" stroke="#e8a500" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M-62 -10 H62 Q62 90 0 108 Q-62 90 -62 -10 Z" fill="url(#ouro)"/>
+    <rect x="-12" y="104" width="24" height="40" fill="#e8a500"/>
+    <rect x="-50" y="140" width="100" height="26" rx="8" fill="#a8671c"/>
+    <rect x="-40" y="166" width="80" height="18" rx="6" fill="#8a5418"/>
+    <use href="#estrela" xlink:href="#estrela" x="-22" y="14" width="44" height="44"/>
+    <ellipse cx="-32" cy="20" rx="8" ry="22" fill="#ffffff" opacity=".4"/>
+  </g>
+
+  <!-- Medalha à direita -->
+  <g transform="translate(1410 690)" class="flutua2">
+    <path d="M-40 -90 L-6 10 L14 10 L-16 -90 Z" fill="#25a9e8"/>
+    <path d="M40 -90 L6 10 L-14 10 L16 -90 Z" fill="#ff4d6d"/>
+    <circle cy="56" r="60" fill="url(#ouro)" stroke="#e8a500" stroke-width="8"/>
+    <circle cy="56" r="42" fill="none" stroke="#fff4b0" stroke-width="4" stroke-dasharray="6 8"/>
+    <use href="#estrela" xlink:href="#estrela" x="-30" y="26" width="60" height="60"/>
+  </g>
+
+  <!-- Flores do gramado -->
+  <g fill="#ffffff">
+    <circle cx="70" cy="900" r="7"/><circle cx="330" cy="950" r="7"/><circle cx="480" cy="880" r="6"/>
+    <circle cx="1120" cy="950" r="7"/><circle cx="1260" cy="880" r="6"/><circle cx="1540" cy="920" r="7"/>
+  </g>
+  <g fill="#ffd43b">
+    <circle cx="70" cy="900" r="3"/><circle cx="330" cy="950" r="3"/><circle cx="480" cy="880" r="3"/>
+    <circle cx="1120" cy="950" r="3"/><circle cx="1260" cy="880" r="3"/><circle cx="1540" cy="920" r="3"/>
+  </g>
+</svg>

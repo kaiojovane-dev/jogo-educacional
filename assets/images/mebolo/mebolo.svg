@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="100%" height="100%">
+  <defs>
+    <radialGradient id="mbFur" cx="45%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#ffd27a"/>
+      <stop offset="55%" stop-color="#ffab3d"/>
+      <stop offset="100%" stop-color="#f08a1c"/>
+    </radialGradient>
+    <linearGradient id="mbBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffb54d"/>
+      <stop offset="100%" stop-color="#ec8417"/>
+    </linearGradient>
+    <linearGradient id="mbBelly" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffaf0"/>
+      <stop offset="100%" stop-color="#ffe8c4"/>
+    </linearGradient>
+    <linearGradient id="mbCollar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7be08d"/>
+      <stop offset="100%" stop-color="#2e9a48"/>
+    </linearGradient>
+    <radialGradient id="mbBell" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#fff6b0"/>
+      <stop offset="60%" stop-color="#ffd43b"/>
+      <stop offset="100%" stop-color="#d49b00"/>
+    </radialGradient>
+    <linearGradient id="mbEar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffb3cf"/>
+      <stop offset="100%" stop-color="#f27aa8"/>
+    </linearGradient>
+    <filter id="mbShadow" x="-15%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#1d6b33" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Sombra no chão -->
+  <ellipse cx="100" cy="206" rx="62" ry="9" fill="#1d6b33" opacity="0.15"/>
+
+  <g filter="url(#mbShadow)">
+    <!-- Rabo -->
+    <path d="M150 178 C182 172 190 140 176 122 C170 114 160 118 166 128 C174 142 166 160 146 164 Z" fill="url(#mbBody)" stroke="#d9731a" stroke-width="2"/>
+    <path d="M172 126 C176 132 177 138 176 143" stroke="#d9731a" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.55"/>
+
+    <!-- Corpo -->
+    <path d="M58 200 C50 160 62 128 100 126 C138 128 150 160 142 200 Z" fill="url(#mbBody)" stroke="#d9731a" stroke-width="2"/>
+    <ellipse cx="100" cy="172" rx="26" ry="28" fill="url(#mbBelly)"/>
+
+    <!-- Patinhas -->
+    <ellipse cx="78" cy="200" rx="17" ry="10" fill="#fff4e0" stroke="#e7a24b" stroke-width="2"/>
+    <ellipse cx="122" cy="200" rx="17" ry="10" fill="#fff4e0" stroke="#e7a24b" stroke-width="2"/>
+    <path d="M73 196 v6 M80 195 v7 M117 196 v6 M124 195 v7" stroke="#e7a24b" stroke-width="1.6" stroke-linecap="round"/>
+
+    <!-- Orelhas -->
+    <path d="M42 70 L48 14 L92 48 Z" fill="url(#mbFur)" stroke="#d9731a" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M52 58 L55 28 L80 48 Z" fill="url(#mbEar)"/>
+    <path d="M158 70 L152 14 L108 48 Z" fill="url(#mbFur)" stroke="#d9731a" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M148 58 L145 28 L120 48 Z" fill="url(#mbEar)"/>
+
+    <!-- Cabeça -->
+    <ellipse cx="100" cy="86" rx="64" ry="54" fill="url(#mbFur)" stroke="#d9731a" stroke-width="2"/>
+
+    <!-- Listrinhas -->
+    <path d="M100 34 L100 50 M88 36 L91 50 M112 36 L109 50" stroke="#e07a12" stroke-width="5" stroke-linecap="round"/>
+    <path d="M38 84 L52 86 M40 98 L53 96 M162 84 L148 86 M160 98 L147 96" stroke="#e07a12" stroke-width="4.5" stroke-linecap="round"/>
+
+    <!-- Focinho claro -->
+    <ellipse cx="100" cy="108" rx="30" ry="21" fill="url(#mbBelly)"/>
+
+    <!-- Olhos grandes -->
+    <ellipse cx="76" cy="84" rx="13" ry="16" fill="#ffffff"/>
+    <ellipse cx="124" cy="84" rx="13" ry="16" fill="#ffffff"/>
+    <ellipse cx="78" cy="87" rx="9" ry="12" fill="#2b5a2f"/>
+    <ellipse cx="122" cy="87" rx="9" ry="12" fill="#2b5a2f"/>
+    <ellipse cx="78" cy="88" rx="5.5" ry="8" fill="#10240f"/>
+    <ellipse cx="122" cy="88" rx="5.5" ry="8" fill="#10240f"/>
+    <circle cx="74" cy="81" r="4" fill="#ffffff"/>
+    <circle cx="118" cy="81" r="4" fill="#ffffff"/>
+    <circle cx="81" cy="93" r="1.8" fill="#ffffff"/>
+    <circle cx="125" cy="93" r="1.8" fill="#ffffff"/>
+
+    <!-- Bochechas -->
+    <ellipse cx="58" cy="106" rx="9" ry="6" fill="#ff8fb8" opacity="0.6"/>
+    <ellipse cx="142" cy="106" rx="9" ry="6" fill="#ff8fb8" opacity="0.6"/>
+
+    <!-- Nariz e boca -->
+    <path d="M93 100 Q100 96 107 100 Q104 107 100 108 Q96 107 93 100 Z" fill="#f05b9b"/>
+    <path d="M100 108 V113 M100 113 Q92 121 85 114 M100 113 Q108 121 115 114" stroke="#7a3b10" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+    <path d="M93 118 Q100 128 107 118 Z" fill="#ff7aa8"/>
+
+    <!-- Bigodes -->
+    <path d="M70 108 L42 102 M70 113 L42 116 M130 108 L158 102 M130 113 L158 116" stroke="#7a3b10" stroke-width="1.8" stroke-linecap="round" opacity="0.75"/>
+
+    <!-- Coleira verde com sininho -->
+    <path d="M60 132 Q100 150 140 132 L142 142 Q100 162 58 142 Z" fill="url(#mbCollar)" stroke="#1d6b33" stroke-width="1.5"/>
+    <circle cx="100" cy="155" r="10" fill="url(#mbBell)" stroke="#b07f00" stroke-width="1.5"/>
+    <path d="M92 155 H108" stroke="#b07f00" stroke-width="1.5"/>
+    <circle cx="100" cy="159" r="2" fill="#7a5600"/>
+  </g>
+</svg>

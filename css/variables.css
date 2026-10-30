@@ -1,0 +1,148 @@
+/* ==========================================================================
+   PATATI PATATÁ — SISTEMA VISUAL OFICIAL
+   Arquivo: css/variables.css
+   Tokens de Design, Paleta de Cores, Tipografia, Sombras e Bordas 3D
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     1. PALETA DE CORES OFICIAL (Extraída das Referências tela1, tela2, tela3, tela4)
+     ------------------------------------------------------------------------ */
+  
+  /* Azuis (Céu, Header, Acentos e Jogo Detetives dos Sons) */
+  --pp-sky-top: #38bdf8;
+  --pp-sky-bottom: #bae6fd;
+  --pp-sky-light: #e0f2fe;
+  --pp-blue-primary: #0084f7;
+  --pp-blue-hover: #006ed6;
+  --pp-blue-dark: #0f3d79;
+  --pp-blue-shadow: #0056aa;
+  --pp-blue-border: #60a5fa;
+
+  /* Verdes (Gramados, Natureza, Botão Confirmar e Jogo O Gato Mebolo) */
+  --pp-green-primary: #22c55e;
+  --pp-green-hover: #16a34a;
+  --pp-green-dark: #15803d;
+  --pp-green-shadow: #166534;
+  --pp-green-light: #dcfce7;
+  --pp-green-border: #4ade80;
+
+  /* Amarelos e Dourados (Sol, Estrelas, Botão "Vamos lá!" e Jogo Construtores) */
+  --pp-yellow-primary: #fbbf24;
+  --pp-yellow-bright: #ffea55;
+  --pp-yellow-hover: #f59e0b;
+  --pp-yellow-dark: #d97706;
+  --pp-yellow-shadow: #b45309;
+  --pp-yellow-light: #fef9c3;
+  --pp-yellow-border: #fcd34d;
+
+  /* Laranjas (Elementos Interativos e Destaques) */
+  --pp-orange-primary: #f97316;
+  --pp-orange-hover: #ea580c;
+  --pp-orange-dark: #c2410c;
+  --pp-orange-shadow: #9a3412;
+  --pp-orange-light: #ffedd5;
+  --pp-orange-border: #fb923c;
+
+  /* Vermelhos e Rosas (Atenção, Livro Mágico e Detalhes Lúdicos) */
+  --pp-red-primary: #ef4444;
+  --pp-red-hover: #dc2626;
+  --pp-red-dark: #b91c1c;
+  --pp-red-shadow: #991b1b;
+  --pp-pink-primary: #ec4899;
+  --pp-pink-hover: #db2777;
+  --pp-pink-dark: #be185d;
+  --pp-pink-shadow: #9d174d;
+  --pp-pink-light: #fce7f3;
+  --pp-pink-border: #f472b6;
+
+  /* Roxos (Jogo Aventura do Re G) */
+  --pp-purple-primary: #8b5cf6;
+  --pp-purple-hover: #7c3aed;
+  --pp-purple-dark: #6d28d9;
+  --pp-purple-shadow: #5b21b6;
+  --pp-purple-light: #f3e8ff;
+  --pp-purple-border: #c084fc;
+
+  /* Brancos e Superfícies (Nuvens, Painéis e Cartões) */
+  --pp-white: #ffffff;
+  --pp-cloud-bg: #ffffff;
+  --pp-card-bg: #ffffff;
+  --pp-surface-light: #f8fafc;
+  --pp-surface-border: #e2e8f0;
+  
+  /* Textos */
+  --pp-text-main: #14325a;
+  --pp-text-muted: #5a759c;
+  --pp-text-light: #ffffff;
+  --pp-text-dark: #0b1f3a;
+
+  /* Cores temáticas dos 5 Jogos Oficiais */
+  --pp-game-1: #0284c7; /* Detetives dos Sons (Ciano) */
+  --pp-game-2: #16a34a; /* O Gato Mebolo (Verde) */
+  --pp-game-3: #ea580c; /* Construtores de Palavras (Amarelo/Laranja) */
+  --pp-game-4: #7c3aed; /* Aventura do Re G (Roxo) */
+  --pp-game-5: #db2777; /* Missão Palavra Mágica (Rosa) */
+
+  /* ------------------------------------------------------------------------
+     2. TIPOGRAFIA LÚDICA E ACESSÍVEL
+     ------------------------------------------------------------------------ */
+  --pp-font-family: 'Fredoka', 'Nunito', 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --pp-font-display: 'Fredoka', 'Nunito', 'Arial Rounded MT Bold', sans-serif;
+  
+  --pp-text-xs: 0.8125rem;  /* 0.8125rem */
+  --pp-text-sm: 0.9375rem;  /* 0.9375rem */
+  --pp-text-base: 1.0625rem;/* 1.0625rem - Excelente para leitura infantil */
+  --pp-text-lg: 1.25rem;    /* 1.25rem */
+  --pp-text-xl: 1.5rem;     /* 1.5rem */
+  --pp-text-2xl: 1.875rem;  /* 1.875rem */
+  --pp-text-3xl: 2.25rem;   /* 2.25rem */
+  --pp-text-4xl: 3rem;      /* 3rem */
+
+  /* ------------------------------------------------------------------------
+     3. RAIO DE BORDA (CANTOS ULTRA ARREDONDADOS ESTILO BRINQUEDO)
+     ------------------------------------------------------------------------ */
+  --pp-radius-sm: 0.75rem;
+  --pp-radius-md: 1.25rem;
+  --pp-radius-lg: 1.75rem;
+  --pp-radius-xl: 2.25rem;
+  --pp-radius-cloud: 3rem;
+  --pp-radius-pill: 624.9375rem;
+  --pp-radius-circle: 50%;
+
+  /* ------------------------------------------------------------------------
+     4. SOMBRAS 3D TÁTEIS E EFEITO BRINQUEDO (TOY DEPTH)
+     ------------------------------------------------------------------------ */
+  --pp-shadow-sm: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.08), 0 0.125rem 0.25rem -0.125rem rgba(0, 0, 0, 0.05);
+  --pp-shadow-md: 0 0.625rem 0.9375rem -0.1875rem rgba(14, 58, 122, 0.12), 0 0.25rem 0.375rem -0.25rem rgba(14, 58, 122, 0.08);
+  --pp-shadow-lg: 0 1.25rem 1.5625rem -0.3125rem rgba(14, 58, 122, 0.16), 0 0.5rem 0.625rem -0.375rem rgba(14, 58, 122, 0.1);
+  --pp-shadow-cloud: 0 0.875rem 1.75rem rgba(3, 105, 161, 0.15), 0 0.375rem 0.75rem rgba(3, 105, 161, 0.1);
+  
+  /* Sombras 3D em botões (Bisel inferior tipo brinquedo físico) */
+  --pp-btn-3d-yellow: 0 0.375rem 0 var(--pp-yellow-shadow), 0 0.625rem 0.875rem rgba(0, 0, 0, 0.18);
+  --pp-btn-3d-yellow-active: 0 0.125rem 0 var(--pp-yellow-shadow), 0 0.25rem 0.375rem rgba(0, 0, 0, 0.15);
+  
+  --pp-btn-3d-green: 0 0.375rem 0 var(--pp-green-shadow), 0 0.625rem 0.875rem rgba(0, 0, 0, 0.18);
+  --pp-btn-3d-green-active: 0 0.125rem 0 var(--pp-green-shadow), 0 0.25rem 0.375rem rgba(0, 0, 0, 0.15);
+  
+  --pp-btn-3d-blue: 0 0.3125rem 0 var(--pp-blue-shadow), 0 0.5rem 0.75rem rgba(0, 0, 0, 0.16);
+  --pp-btn-3d-blue-active: 0 0.125rem 0 var(--pp-blue-shadow), 0 0.1875rem 0.3125rem rgba(0, 0, 0, 0.12);
+
+  --pp-btn-3d-pill: 0 0.25rem 0 #93c5fd, 0 0.375rem 0.625rem rgba(0, 0, 0, 0.08);
+
+  /* ------------------------------------------------------------------------
+     5. TRANSIÇÕES SUAVES (SEM EXAGEROS DE ANIMAÇÃO)
+     ------------------------------------------------------------------------ */
+  --pp-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --pp-transition-bounce: 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  --pp-transition-smooth: 250ms ease-out;
+
+  /* ------------------------------------------------------------------------
+     6. Z-INDEX
+     ------------------------------------------------------------------------ */
+  --pp-z-scenery: 1;
+  --pp-z-content: 10;
+  --pp-z-header: 50;
+  --pp-z-modal: 100;
+  --pp-z-toast: 150;
+}

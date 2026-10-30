@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax slice">
+  <!-- Fundo da tela Sobre: escolinha no campo, letras voando, avião de papel e cerca de lápis -->
+  <defs>
+    <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#48bdf7"/>
+      <stop offset=".6" stop-color="#a6e0fc"/>
+      <stop offset="1" stop-color="#e8f8ff"/>
+    </linearGradient>
+    <linearGradient id="morro" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7ddc8e"/>
+      <stop offset="1" stop-color="#3aae52"/>
+    </linearGradient>
+    <symbol id="nuvem" viewBox="0 0 200 90">
+      <g fill="#fff">
+        <ellipse cx="100" cy="64" rx="96" ry="24"/>
+        <circle cx="68" cy="50" r="32"/>
+        <circle cx="116" cy="38" r="40"/>
+        <circle cx="160" cy="56" r="24"/>
+      </g>
+    </symbol>
+    <symbol id="lapis" viewBox="0 0 40 200">
+      <rect x="2" y="40" width="36" height="160" rx="4"/>
+      <rect x="2" y="40" width="12" height="160" fill="#ffffff" opacity=".25"/>
+      <path d="M2 42 L20 0 L38 42 Z" fill="#f6d2a2"/>
+      <path d="M13 16 L20 0 L27 16 Z" fill="#3b3b3b"/>
+    </symbol>
+  </defs>
+
+  <style>
+    .flutua { animation: flutua 6s ease-in-out infinite; }
+    .flutua2 { animation: flutua 7s ease-in-out infinite -3s; }
+    .letra { transform-box: fill-box; transform-origin: center; animation: letra 5s ease-in-out infinite; }
+    .letra2 { transform-box: fill-box; transform-origin: center; animation: letra 6s ease-in-out infinite -2s; }
+    .aviao { animation: aviao 8s ease-in-out infinite; }
+    @keyframes flutua { 50% { transform: translateY(-14px); } }
+    @keyframes letra { 50% { transform: translateY(-18px) rotate(8deg); } }
+    @keyframes aviao { 50% { transform: translate(-20px, 14px); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    text { font-family: "Arial Rounded MT Bold", "Arial Black", Arial, sans-serif; font-weight: 900; paint-order: stroke; stroke: #ffffff; stroke-width: 10px; stroke-linejoin: round; }
+  </style>
+
+  <rect width="1600" height="1000" fill="url(#ceu)"/>
+
+  <!-- Sol -->
+  <g transform="translate(170 170)">
+    <circle r="96" fill="#fff3a6" opacity=".55"/>
+    <circle r="70" fill="#ffd43b"/>
+    <ellipse cx="-20" cy="-10" rx="6" ry="9" fill="#5a3a12"/>
+    <ellipse cx="20" cy="-10" rx="6" ry="9" fill="#5a3a12"/>
+    <path d="M-17 15 Q0 33 17 15" stroke="#5a3a12" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Nuvens -->
+  <use href="#nuvem" xlink:href="#nuvem" x="320" y="120" width="220" height="99" class="flutua"/>
+  <use href="#nuvem" xlink:href="#nuvem" x="1040" y="160" width="200" height="90" opacity=".85" class="flutua2"/>
+  <use href="#nuvem" xlink:href="#nuvem" x="1360" y="330" width="180" height="81" opacity=".8" class="flutua"/>
+
+  <!-- Avião de papel com trilha -->
+  <path d="M760 300 Q980 200 1160 330 T1420 250" stroke="#ffffff" stroke-width="5" stroke-dasharray="4 16" stroke-linecap="round" fill="none" opacity=".9"/>
+  <g class="aviao">
+    <g transform="translate(1440 240) rotate(-18)">
+      <path d="M0 0 L-90 -26 L-60 6 Z" fill="#ffffff"/>
+      <path d="M0 0 L-60 6 L-70 30 Z" fill="#d8eefb"/>
+      <path d="M-60 6 L-90 -26 L-70 30 Z" fill="#b7dcf3"/>
+    </g>
+  </g>
+
+  <!-- Letras voando -->
+  <text x="110" y="420" font-size="110" fill="#ff4d6d" class="letra">A</text>
+  <text x="300" y="520" font-size="84" fill="#25a9e8" class="letra2">b</text>
+  <text x="1300" y="560" font-size="96" fill="#54c96b" class="letra">C</text>
+  <text x="1480" y="460" font-size="76" fill="#9364e8" class="letra2">d</text>
+  <text x="560" y="250" font-size="64" fill="#ff9838" class="letra2">E</text>
+
+  <!-- Morros -->
+  <path d="M0 700 Q300 610 640 690 T1300 670 T1600 650 V1000 H0 Z" fill="url(#morro)" opacity=".75"/>
+  <path d="M0 790 Q420 720 820 780 T1600 760 V1000 H0 Z" fill="#3aae52"/>
+
+  <!-- Escolinha à esquerda -->
+  <g transform="translate(150 610)">
+    <rect x="0" y="70" width="210" height="150" fill="#fff4dc"/>
+    <path d="M-20 76 L105 -10 L230 76 Z" fill="#ff4d6d"/>
+    <rect x="80" y="-60" width="50" height="70" fill="#fff4dc"/>
+    <path d="M70 -54 L105 -86 L140 -54 Z" fill="#ff4d6d"/>
+    <circle cx="105" cy="-30" r="14" fill="#ffffff" stroke="#25a9e8" stroke-width="4"/>
+    <rect x="80" y="140" width="50" height="80" rx="24" fill="#25a9e8"/>
+    <rect x="22" y="110" width="44" height="40" rx="6" fill="#bfe6f9" stroke="#ffffff" stroke-width="5"/>
+    <rect x="144" y="110" width="44" height="40" rx="6" fill="#bfe6f9" stroke="#ffffff" stroke-width="5"/>
+    <rect x="103" y="-118" width="4" height="40" fill="#8a5a2b"/>
+    <path d="M107 -118 L140 -108 L107 -98 Z" fill="#ffd43b"/>
+  </g>
+
+  <!-- Árvore à direita -->
+  <g transform="translate(1400 640)">
+    <rect x="-14" y="10" width="28" height="140" rx="10" fill="#9a6232"/>
+    <circle cy="-10" r="80" fill="#36a94a"/>
+    <circle cx="-56" cy="26" r="50" fill="#45bb58"/>
+    <circle cx="56" cy="22" r="54" fill="#2f9e44"/>
+    <circle cx="-20" cy="-40" r="10" fill="#ff4d6d"/>
+    <circle cx="30" cy="-6" r="10" fill="#ff4d6d"/>
+    <circle cx="-44" cy="20" r="10" fill="#ff4d6d"/>
+  </g>
+
+  <!-- Livros empilhados -->
+  <g transform="translate(1180 820)">
+    <rect x="0" y="40" width="150" height="34" rx="6" fill="#25a9e8"/>
+    <rect x="12" y="8" width="130" height="34" rx="6" fill="#ffd43b"/>
+    <rect x="4" y="-24" width="140" height="34" rx="6" fill="#f05b9b"/>
+    <rect x="6" y="48" width="138" height="6" fill="#ffffff" opacity=".6"/>
+    <rect x="18" y="16" width="118" height="6" fill="#ffffff" opacity=".6"/>
+    <rect x="10" y="-16" width="128" height="6" fill="#ffffff" opacity=".6"/>
+  </g>
+
+  <!-- Cerca de lápis -->
+  <g>
+    <rect x="0" y="925" width="1600" height="14" fill="#c98a4b"/>
+    <use href="#lapis" xlink:href="#lapis" x="10" y="860" width="40" height="140" fill="#ff4d6d"/>
+    <use href="#lapis" xlink:href="#lapis" x="70" y="850" width="40" height="150" fill="#ffd43b"/>
+    <use href="#lapis" xlink:href="#lapis" x="130" y="866" width="40" height="134" fill="#25a9e8"/>
+    <use href="#lapis" xlink:href="#lapis" x="190" y="854" width="40" height="146" fill="#54c96b"/>
+    <use href="#lapis" xlink:href="#lapis" x="250" y="862" width="40" height="138" fill="#9364e8"/>
+    <use href="#lapis" xlink:href="#lapis" x="310" y="850" width="40" height="150" fill="#ff9838"/>
+    <use href="#lapis" xlink:href="#lapis" x="370" y="864" width="40" height="136" fill="#f05b9b"/>
+    <use href="#lapis" xlink:href="#lapis" x="1190" y="864" width="40" height="136" fill="#ff4d6d"/>
+    <use href="#lapis" xlink:href="#lapis" x="1250" y="850" width="40" height="150" fill="#ffd43b"/>
+    <use href="#lapis" xlink:href="#lapis" x="1310" y="862" width="40" height="138" fill="#25a9e8"/>
+    <use href="#lapis" xlink:href="#lapis" x="1370" y="854" width="40" height="146" fill="#54c96b"/>
+    <use href="#lapis" xlink:href="#lapis" x="1430" y="866" width="40" height="134" fill="#9364e8"/>
+    <use href="#lapis" xlink:href="#lapis" x="1490" y="850" width="40" height="150" fill="#ff9838"/>
+    <use href="#lapis" xlink:href="#lapis" x="1550" y="860" width="40" height="140" fill="#f05b9b"/>
+  </g>
+</svg>
