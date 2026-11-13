@@ -99,16 +99,26 @@
       const help = ppEl('p', 'pp-cw-help');
 
       const actions = ppEl('div', 'pp-gs-actions');
-      const clear = ppEl('button', 'pp-btn pp-btn--soft');
-      clear.type = 'button';
-      clear.innerHTML = `${PP_ICONS.erase}<span>Limpar</span>`;
-      clear.addEventListener('click', () => {
-        slots.fill(null);
+    const clear = ppEl('button', 'pp-btn pp-btn--soft');
+    clear.type = 'button';
+    clear.innerHTML = `${PP_ICONS.erase}<span>Limpar</span>`;
+    clear.addEventListener('click', () => {
+      let lastIdx = -1;
+      for (let i = slots.length - 1; i >= 0; i--) {
+        if (slots[i] !== null) {
+          lastIdx = i;
+          break;
+        }
+      }
+
+      if (lastIdx !== -1) {
+        slots[lastIdx] = null;
         selected = -1;
         rightPositions = new Set();
         this.clearErrorFeedback();
         draw();
-      });
+      }
+    });
       const confirm = ppEl('button', 'pp-btn pp-btn--green-confirm');
       confirm.type = 'button';
       confirm.innerHTML = `${PP_ICONS.check}<span>Confirmar</span>`;
