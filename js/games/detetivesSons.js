@@ -20,87 +20,87 @@ class DetetivesDosSonsGame {
       },
       {
         id: 2,
-        phoneme: 'B / P',
+        phoneme: 'B',
         word: 'Borboleta',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Ouça o som do B inicial da borboleta!',
+        subtitle: 'Ouça o som!',
         options: ['Porpoleta', 'Porboleta', 'Bolboleta', 'Borboleta'],
         correct: 'Borboleta',
         image: 'assets/images/detetives/borboleta.jpg'
       },
       {
         id: 3,
-        phoneme: 'T / D',
+        phoneme: 'T',
         word: 'Tesoura',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Atenção ao som do T e do S no meio da tesoura!',
+        subtitle: 'Atenção ao som da palavra!',
         options: ['Desoura', 'Tezoura', 'Teçoura', 'Tesoura'],
         correct: 'Tesoura',
         image: 'assets/images/detetives/tesoura.jpg'
       },
       {
         id: 4,
-        phoneme: 'G / J',
+        phoneme: 'G',
         word: 'Girafa',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Girafa se escreve com G ou com J? Descubra a pista!',
+        subtitle: 'Se escreve com G ou com J? Descubra a palavra!',
         options: ['Jirafa', 'Giraba', 'Girapa', 'Girafa'],
         correct: 'Girafa',
         image: 'assets/images/detetives/girafa.jpg'
       },
       {
         id: 5,
-        phoneme: 'CH / X',
+        phoneme: 'CH',
         word: 'Chave',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Ouça o som de CH da chave e encontre a correta!',
+        subtitle: 'Ouça o som e encontre a correta!',
         options: ['Xave', 'Chafe', 'Xafe', 'Chave'],
         correct: 'Chave',
         image: 'assets/images/detetives/chave.jpg'
       },
       {
         id: 6,
-        phoneme: 'F / V e G / GU',
+        phoneme: 'F / GU',
         word: 'Foguete',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Foguete começa com F e tem som de GUE!',
+        subtitle: 'Preste atenção nos sons do começo e do meio da palavra!',
         options: ['Voguete', 'Fogete', 'Vogete', 'Foguete'],
         correct: 'Foguete',
         image: 'assets/images/detetives/foguete.jpg'
       },
       {
         id: 7,
-        phoneme: 'P / B e LH',
+        phoneme: 'P',
         word: 'Palhaço',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Atenção à escrita do nosso amigo Palhaço!',
+        subtitle: 'Atenção à escrita!',
         options: ['Balhaço', 'Palhasso', 'Balhasso', 'Palhaço'],
         correct: 'Palhaço',
         image: 'assets/images/detetives/palhaco.svg'
       },
       {
         id: 8,
-        phoneme: 'S / Ç / X / Z',
+        phoneme: 'S',
         word: 'Sapato',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Sapato começa com qual letra? Investigue!',
+        subtitle: 'Começa com qual letra? Investigue!',
         options: ['Çapato', 'Xapato', 'Zapato', 'Sapato'],
         correct: 'Sapato',
         image: 'assets/images/detetives/sapato.svg'
       },
       {
         id: 9,
-        phoneme: 'Z / S e B / P',
+        phoneme: 'Z',
         word: 'Zebra',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Ouça o som da Zebra e escolha a palavra certa!',
+        subtitle: 'Ouça o som da palavra e escolha a palavra certa!',
         options: ['Sebra', 'Zepra', 'Sepra', 'Zebra'],
         correct: 'Zebra',
         image: 'assets/images/detetives/zebra.svg'
       },
       {
         id: 10,
-        phoneme: 'CH / X e T / D',
+        phoneme: 'CH',
         word: 'Chocolate',
         question: 'Qual palavra está escrita corretamente?',
         subtitle: 'Última pista do mistério dos sons!',
@@ -117,6 +117,8 @@ class DetetivesDosSonsGame {
     this.firstAttempt = true; // Se está na primeira tentativa da rodada
 
     this.timers = [];        // Ações agendadas, canceladas ao sair do jogo
+
+    this.correctPositions = [];
   }
 
   // Agenda ações que podem ser canceladas ao sair ou reiniciar o jogo
@@ -147,12 +149,41 @@ class DetetivesDosSonsGame {
     this.correctCount = 0;
     this.isAnswering = false;
     this.firstAttempt = true;
+    this.correctPositions = this.createBalancedPositions(); // Distribui as respostas corretas entre as quatro posições
     this.renderRound();
 
     if (window.ppAudio) {
       window.ppAudio.speak("Bem-vindo ao jogo Detetives dos Sons! Ouça, observe com a lupa e encontre a palavra certa!");
     }
   }
+  
+  // Embaralha um array
+  shuffleArray(array) {
+    const shuffled = [...array];
+
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    return shuffled;
+  }
+
+  // Distribui as respostas corretas de forma equilibrada
+  createBalancedPositions() {
+    const positions = [
+      0, 0,
+      1, 1,
+      2, 2,
+      3, 3,
+      Math.floor(Math.random() * 4),
+      Math.floor(Math.random() * 4)
+    ];
+
+    return this.shuffleArray(positions);
+  }
+
 
   getCurrentRound() {
     return this.rounds[this.currentIndex];
@@ -214,7 +245,7 @@ class DetetivesDosSonsGame {
     // 4. Atualiza Indicadores de Progresso
     const roundCounter = document.getElementById('detetives-round-counter');
     if (roundCounter) {
-      roundCounter.textContent = `Pista ${this.currentIndex + 1} de ${this.rounds.length}`;
+      roundCounter.textContent = `RODADA ${this.currentIndex + 1} DE ${this.rounds.length}`;
     }
 
     const progressFill = document.getElementById('detetives-progress-fill');
@@ -239,13 +270,32 @@ class DetetivesDosSonsGame {
     const optionsGrid = document.getElementById('detetives-options-grid');
     if (optionsGrid) {
       optionsGrid.innerHTML = '';
-      round.options.forEach((optText) => {
-        const btn = document.createElement('button');
-        btn.className = 'pp-detetive-option-btn';
-        btn.textContent = optText;
-        btn.setAttribute('aria-label', optText);
-        btn.addEventListener('click', () => this.handleOptionClick(btn, optText));
-        optionsGrid.appendChild(btn);
+      // Separa as alternativas incorretas
+      const wrongOptions = round.options.filter(
+          opt => opt !== round.correct
+      );
+
+      // Embaralha as alternativas incorretas
+      const shuffledWrong = this.shuffleArray(wrongOptions);
+
+      // Define a posição da resposta correta
+      const correctPosition = this.correctPositions[this.currentIndex];
+
+      // Coloca a resposta correta na posição definida
+      shuffledWrong.splice(correctPosition, 0, round.correct);
+
+      // Cria os botões
+      shuffledWrong.forEach((optText) => {
+          const btn = document.createElement('button');
+          btn.className = 'pp-detetive-option-btn';
+          btn.textContent = optText;
+          btn.setAttribute('aria-label', optText);
+
+          btn.addEventListener('click', () =>
+              this.handleOptionClick(btn, optText)
+          );
+
+          optionsGrid.appendChild(btn);
       });
     }
 

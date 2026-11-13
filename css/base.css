@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
+  text-transform: uppercase;
 }
 
 /* Escala fluida: todas as medidas usam rem, então em telas grandes a
@@ -40,6 +41,7 @@ body {
   background-color: var(--pp-sky-top);
   user-select: none;
   -webkit-user-select: none;
+  text-transform: uppercase;
 }
 
 /* --------------------------------------------------------------------------
