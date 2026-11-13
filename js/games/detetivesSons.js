@@ -23,7 +23,7 @@ class DetetivesDosSonsGame {
         phoneme: 'B',
         word: 'Borboleta',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Ouça o som do B inicial da borboleta!',
+        subtitle: 'Ouça o som!',
         options: ['Porpoleta', 'Porboleta', 'Bolboleta', 'Borboleta'],
         correct: 'Borboleta',
         image: 'assets/images/detetives/borboleta.jpg'
@@ -33,7 +33,7 @@ class DetetivesDosSonsGame {
         phoneme: 'T',
         word: 'Tesoura',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Atenção ao som do T e do S no meio da tesoura!',
+        subtitle: 'Atenção ao som da palavra!',
         options: ['Desoura', 'Tezoura', 'Teçoura', 'Tesoura'],
         correct: 'Tesoura',
         image: 'assets/images/detetives/tesoura.jpg'
@@ -43,7 +43,7 @@ class DetetivesDosSonsGame {
         phoneme: 'G',
         word: 'Girafa',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Girafa se escreve com G ou com J? Descubra a pista!',
+        subtitle: 'Se escreve com G ou com J? Descubra a palavra!',
         options: ['Jirafa', 'Giraba', 'Girapa', 'Girafa'],
         correct: 'Girafa',
         image: 'assets/images/detetives/girafa.jpg'
@@ -53,7 +53,7 @@ class DetetivesDosSonsGame {
         phoneme: 'CH',
         word: 'Chave',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Ouça o som de CH da chave e encontre a correta!',
+        subtitle: 'Ouça o som e encontre a correta!',
         options: ['Xave', 'Chafe', 'Xafe', 'Chave'],
         correct: 'Chave',
         image: 'assets/images/detetives/chave.jpg'
@@ -63,7 +63,7 @@ class DetetivesDosSonsGame {
         phoneme: 'F / GU',
         word: 'Foguete',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Foguete começa com F e tem som de GUE!',
+        subtitle: 'Preste atenção nos sons do começo e do meio da palavra!',
         options: ['Voguete', 'Fogete', 'Vogete', 'Foguete'],
         correct: 'Foguete',
         image: 'assets/images/detetives/foguete.jpg'
@@ -73,7 +73,7 @@ class DetetivesDosSonsGame {
         phoneme: 'P',
         word: 'Palhaço',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Atenção à escrita do nosso amigo Palhaço!',
+        subtitle: 'Atenção à escrita!',
         options: ['Balhaço', 'Palhasso', 'Balhasso', 'Palhaço'],
         correct: 'Palhaço',
         image: 'assets/images/detetives/palhaco.svg'
@@ -83,7 +83,7 @@ class DetetivesDosSonsGame {
         phoneme: 'S',
         word: 'Sapato',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Sapato começa com qual letra? Investigue!',
+        subtitle: 'Começa com qual letra? Investigue!',
         options: ['Çapato', 'Xapato', 'Zapato', 'Sapato'],
         correct: 'Sapato',
         image: 'assets/images/detetives/sapato.svg'
@@ -93,7 +93,7 @@ class DetetivesDosSonsGame {
         phoneme: 'Z',
         word: 'Zebra',
         question: 'Qual palavra está escrita corretamente?',
-        subtitle: 'Ouça o som da Zebra e escolha a palavra certa!',
+        subtitle: 'Ouça o som da palavra e escolha a palavra certa!',
         options: ['Sebra', 'Zepra', 'Sepra', 'Zebra'],
         correct: 'Zebra',
         image: 'assets/images/detetives/zebra.svg'
